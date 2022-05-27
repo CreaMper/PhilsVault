@@ -11,7 +11,7 @@ namespace WyrewolwerowanyRewolwerowiec.UnitOfWork
     [SupportedOSPlatform("windows")]
     public class ProgressManager
     {
-        private static string _directoryName = "creamper";
+        private static string _directoryName = "CDSGames";
         private static string _fileName = "miracle.txt";
         private static string _freshDirectoryPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @$"{_directoryName}");
         private static string _progressPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @$"{_directoryName}\{_fileName}");

@@ -19,7 +19,7 @@ namespace WyrewolwerowanyRewolwerowiec.UnitOfWork
             Console.Write(str);
         }
 
-        public void WL(string str)
+        public void WL(string str = null)
         {
             Console.Write($"\n\r{str}");
         }

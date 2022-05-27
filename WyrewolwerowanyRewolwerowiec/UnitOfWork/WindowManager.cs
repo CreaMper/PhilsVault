@@ -30,6 +30,13 @@ namespace WyrewolwerowanyRewolwerowiec.UnitOfWork
             Console.Clear();
         }
 
+        [DllImport("user32.dll")]
+        public static extern bool LockWorkStation();
+        public void LockWindows()
+        {
+            LockWorkStation();
+        }
+
         [DllImport("User32.dll", CharSet = CharSet.Unicode)]
         private static extern int MessageBox(IntPtr h, string m, string c, int type);
         public int Message(string tittle, string message, int type)
@@ -40,6 +47,15 @@ namespace WyrewolwerowanyRewolwerowiec.UnitOfWork
         public void MessageVoid(string tittle, string message, int type)
         {
             MessageBox((IntPtr)0, message, tittle, type);
+        }
+
+        public void SetDefault()
+        {
+            Console.Title = "Command Prompt";
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.CursorSize = 1;
+            Console.Clear();
         }
 
     }

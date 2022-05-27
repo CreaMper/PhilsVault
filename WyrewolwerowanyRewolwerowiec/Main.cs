@@ -28,6 +28,8 @@ namespace WyrewolwerowanyRewolwerowiec
 
             //Stage selection
             factory.StageManager.LetTheGameBegins();
+            Thread.Sleep(100000);
+
         }
     }
 }
