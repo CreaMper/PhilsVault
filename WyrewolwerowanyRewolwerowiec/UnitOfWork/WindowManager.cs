@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using WyrewolwerowanyRewolwerowiec.Dto.GameProgress;
 
@@ -28,5 +29,18 @@ namespace WyrewolwerowanyRewolwerowiec.UnitOfWork
             Console.CursorSize = 1;
             Console.Clear();
         }
+
+        [DllImport("User32.dll", CharSet = CharSet.Unicode)]
+        private static extern int MessageBox(IntPtr h, string m, string c, int type);
+        public int Message(string tittle, string message, int type)
+        {
+            return MessageBox((IntPtr)0, message, tittle, type);
+        }
+
+        public void MessageVoid(string tittle, string message, int type)
+        {
+            MessageBox((IntPtr)0, message, tittle, type);
+        }
+
     }
 }
