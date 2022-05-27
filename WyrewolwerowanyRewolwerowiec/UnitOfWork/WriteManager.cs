@@ -6,7 +6,7 @@ namespace WyrewolwerowanyRewolwerowiec.UnitOfWork
 {
     public class WriteManager
     {
-        private Random _rand = new Random();
+        public Random _rand = new Random();
 
         public enum T 
         {

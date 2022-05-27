@@ -12,6 +12,7 @@ namespace WyrewolwerowanyRewolwerowiec
         public WindowManager WindowManager;
         public StageManager StageManager;
         public ProgressDto _progress;
+        public AnimationManager AnimationManager;
 
         public Factory()
         {
@@ -19,6 +20,7 @@ namespace WyrewolwerowanyRewolwerowiec
             var progress = ProgressManager.Load();
             WindowManager = new WindowManager(progress);
             StageManager = new StageManager(progress);
+            AnimationManager = new AnimationManager();
         }
     }
 }

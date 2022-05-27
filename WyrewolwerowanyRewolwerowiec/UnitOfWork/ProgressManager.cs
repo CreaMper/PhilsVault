@@ -62,5 +62,10 @@ namespace WyrewolwerowanyRewolwerowiec.UnitOfWork
         {
             return Encoding.Unicode.GetString(ProtectedData.Unprotect(Convert.FromBase64String(str), null, DataProtectionScope.LocalMachine));
         }
+
+        public void Update(ProgressDto progress)
+        {
+            File.WriteAllText(_progressPath, Cipher(JsonConvert.SerializeObject(progress)));
+        }
     }
 }
