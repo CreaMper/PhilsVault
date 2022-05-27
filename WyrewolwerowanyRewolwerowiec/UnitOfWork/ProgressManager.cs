@@ -1,12 +1,14 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.IO;
+using System.Runtime.Versioning;
 using System.Security.Cryptography;
 using System.Text;
 using WyrewolwerowanyRewolwerowiec.Dto.GameProgress;
 
 namespace WyrewolwerowanyRewolwerowiec.UnitOfWork
 {
+    [SupportedOSPlatform("windows")]
     public class ProgressManager
     {
         private static string _directoryName = "creamper";

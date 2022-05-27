@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Runtime.Versioning;
+using System.Threading;
 
 namespace WyrewolwerowanyRewolwerowiec
 {
+    [SupportedOSPlatform("windows")]
     class Program
     {
         static void Main(string[] args)
@@ -9,14 +12,12 @@ namespace WyrewolwerowanyRewolwerowiec
             //Game factory load
             var factory = new Factory();
 
-            //Game progress load
-            var progress = factory.ProgressManager.Load();
-
             //Console initalisation
-            factory.WindowManager.Initialise(progress);
+            factory.WindowManager.Initialise();
 
-            //Stage
-            Console.WriteLine("asdasd");
+            //Stage selection
+            factory.StageManager.LetTheGameBegins();
+            Thread.Sleep(100000);
         }
     }
 }
