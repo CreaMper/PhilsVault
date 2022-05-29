@@ -14,11 +14,11 @@ namespace WyrewolwerowanyRewolwerowiec.UnitOfWork
             _progress = progress;
         }
 
-        public void LetTheGameBegins()
+        public void LetTheGameBegins(string[] args)
         {
             if (_progress.Player.Stage == 1)
             {
-                var stage = new AlphaStage(_progress);
+                var stage = new AlphaStage(_progress, args);
                 stage.Start();
             }
         }

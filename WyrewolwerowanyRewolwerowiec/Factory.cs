@@ -21,8 +21,8 @@ namespace WyrewolwerowanyRewolwerowiec
             var progress = ProgressManager.Load();
             WindowManager = new WindowManager(progress);
             StageManager = new StageManager(progress);
-            AnimationManager = new AnimationManager();
             SoundManager = new SoundManager();
+            AnimationManager = new AnimationManager(WindowManager, SoundManager);
         }
     }
 }

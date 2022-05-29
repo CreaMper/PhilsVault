@@ -26,6 +26,9 @@ namespace WyrewolwerowanyRewolwerowiec.UnitOfWork
 
         public void S(int time)
         {
+            if (time == 0)
+                Thread.Sleep(int.MaxValue);
+
             Thread.Sleep(time);
         }
 

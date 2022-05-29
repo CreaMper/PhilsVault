@@ -2,6 +2,7 @@
   "profiles": {
     "WyrewolwerowanyRewolwerowiec": {
       "commandName": "Project",
+      "commandLineArgs": "mood",
       "nativeDebugging": false
     }
   }

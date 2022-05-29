@@ -27,7 +27,7 @@ namespace WyrewolwerowanyRewolwerowiec
             factory.WindowManager.Initialise();
 
             //Stage selection
-            factory.StageManager.LetTheGameBegins();
+            factory.StageManager.LetTheGameBegins(args);
             Thread.Sleep(100000);
 
         }

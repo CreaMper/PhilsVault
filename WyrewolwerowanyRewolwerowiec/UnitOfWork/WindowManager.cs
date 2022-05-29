@@ -23,7 +23,7 @@ namespace WyrewolwerowanyRewolwerowiec.UnitOfWork
 
         public void FirstLaunch()
         {
-            Console.Title = "          more          more          more          more          more          more";
+            Console.Title = "          mood          mood          mood          mood          mood          mood";
             Console.ForegroundColor = ConsoleColor.Red;
             Console.BackgroundColor = ConsoleColor.White;
             Console.CursorSize = 1;

@@ -2,6 +2,7 @@
 {
     public enum AnimationType
     {
-        FirstLaunch
+        FirstLaunch,
+        AlphaJoker
     }
 }

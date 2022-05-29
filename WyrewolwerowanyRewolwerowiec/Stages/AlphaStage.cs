@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Media;
 using System.Reflection;
 using System.Runtime.Versioning;
@@ -16,15 +17,27 @@ namespace WyrewolwerowanyRewolwerowiec.Stages
     {
         private static ProgressDto _progress;
         private static Factory _factory;
+        private string[] _args;
         
-        public AlphaStage(ProgressDto progress)
+        public AlphaStage(ProgressDto progress, string[] args)
         {
             _progress = progress;
             _factory = new Factory();
+            _args = args;
         }
 
         public void Start()
         {
+            /////save manimulation
+/*            _progress.Alpha.AcceptedInvitation = true;
+            _progress.Alpha.Reboot = true;
+            _progress.Alpha.SecondReboot = true;
+            _progress.Alpha.ForceReboot = true;
+            _progress.Alpha.FolderShowcase = true;
+            _progress.Alpha.Agreement = false;
+            _factory.ProgressManager.Update(_progress);
+            Environment.Exit(0);*/
+
             if (!_progress.Alpha.AcceptedInvitation) 
             {
                 S(4000);
@@ -275,26 +288,80 @@ namespace WyrewolwerowanyRewolwerowiec.Stages
                 C();
                 S(2000);
 
-                Console.SetCursorPosition(10, 20);
-                Console.BackgroundColor = ConsoleColor.White;
-                Console.ForegroundColor = ConsoleColor.Red;
+                _factory.AnimationManager.Animate(AnimationType.AlphaJoker);
 
-                _factory.SoundManager.Play("bigBlack.wav");
-                S(400);
-                ConsoleType("Riddle me this,", 900, T.W, false);
-                S(800);
-                ConsoleType(" riddle me that.", 800, T.W, false);
-                S(1500);
-                ConsoleType(" Who’s afraid ", 500, T.W, false);
-                S(100);
-                ConsoleType("of the big, black", 1100, T.W, false);
-                S(200);
-                ConsoleType(" bat?", 300, T.W, false);
-                S(5000);
-
+                _progress.Player.Resets = 0;
                 _progress.Alpha.Agreement = true;
                 _factory.ProgressManager.Update(_progress);
                 Environment.Exit(0);
+            }
+            else if (!_progress.Alpha.RiddleOne)
+            {
+                if (_args.Contains("mood") || _args.Contains("--mood"))
+                {
+                    ConsoleType("It is definitelly right leg today! Thanks for asking!", 1000, T.WL);
+                    S(6000);
+                    ConsoleType("I told you that this riddle will be easy!", 2000, T.WL);
+                    S(2000);
+                    C();
+                    ConsoleType("As we aggreed, I am going to fix one of your system files...", 2000, T.WL);
+                    S(2000);
+                    ConsoleType("Don't you worry, tho!", 2000, T.WL);
+                    S(2000);
+                    C();
+                    Console.SetCursorPosition(15, 15);
+
+                    ConsoleType("A lot of files are still waiting...", 1000, T.WL);
+                    S(3000);
+                    ConsoleType("to be destroyed", 100, T.W);
+
+                    var processes = Process.GetProcessesByName("cmd");
+                    foreach (var process in processes)
+                        process.Kill();
+
+                    _progress.Player.Resets = 0;
+                    _progress.Alpha.RiddleOne = true;
+                    _factory.ProgressManager.Update(_progress);
+                    Environment.Exit(0);
+                }
+
+                _progress.Player.Resets += 1;
+                _factory.ProgressManager.Update(_progress);
+
+                if (_progress.Player.Resets == 5 || _progress.Player.Resets == 8 || _progress.Player.Resets >= 13)
+                {
+                    Console.Title = "          --mood          --mood          --mood          --mood         --mood          --mood";
+                    WL("Starting a day with a left leg would lead to disappointment.");
+                    S(1000);
+                    WL("Starting a day with a right leg would lead to hapinness.");
+                    S(1000);
+                    WL("How did I started my day, today?");
+                    S(1000);
+                    WL();
+                    WL();
+                    WL();
+                    WL("It's just a first riddle... start cannot be that hard, can it?");
+                    S(0);
+                } else
+                {
+                    Console.Title = "          --mood          --mood          --mood          --mood         --mood          --mood";
+                    S(4000);
+                    ConsoleType("Hi", 1000, T.WL);
+                    S(2000);
+                    ConsoleType(", You...", 1000);
+                    S(1000);
+                    ConsoleType("It's time for some fun!", 2000, T.WL);
+                    S(2000);
+                    ConsoleType("Read carefully..", 2000, T.WL);
+                    S(2000);
+                    C();
+                    ConsoleType("Starting a day with a left leg would lead to disappointment.", 2000, T.WL);
+                    S(5000);
+                    ConsoleType("Starting a day with a right leg would lead to hapinness.", 2000, T.WL);
+                    S(5000);
+                    ConsoleType("How did I started my day, today?", 2000, T.WL);
+                    S(0);
+                }
             }
         }
     }
