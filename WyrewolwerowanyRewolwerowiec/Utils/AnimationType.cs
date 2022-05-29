@@ -1,4 +1,4 @@
-﻿namespace WyrewolwerowanyRewolwerowiec.Utils
+﻿namespace PhilsLab.Utils
 {
     public enum AnimationType
     {

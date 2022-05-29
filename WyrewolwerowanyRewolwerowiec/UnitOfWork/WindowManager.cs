@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using WyrewolwerowanyRewolwerowiec.Dto.GameProgress;
+using PhilsLab.Dto.GameProgress;
 
-namespace WyrewolwerowanyRewolwerowiec.UnitOfWork
+namespace PhilsLab.UnitOfWork
 {
     [SupportedOSPlatform("windows")]
     public class WindowManager

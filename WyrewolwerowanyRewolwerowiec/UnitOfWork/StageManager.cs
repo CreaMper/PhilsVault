@@ -1,8 +1,8 @@
 ﻿using System.Runtime.Versioning;
-using WyrewolwerowanyRewolwerowiec.Dto.GameProgress;
-using WyrewolwerowanyRewolwerowiec.Stages;
+using PhilsLab.Dto.GameProgress;
+using PhilsLab.Stages;
 
-namespace WyrewolwerowanyRewolwerowiec.UnitOfWork
+namespace PhilsLab.UnitOfWork
 {
     [SupportedOSPlatform("windows")]
     public class StageManager

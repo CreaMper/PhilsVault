@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Threading;
 
-namespace WyrewolwerowanyRewolwerowiec.UnitOfWork
+namespace PhilsLab.UnitOfWork
 {
     public class WriteManager
     {

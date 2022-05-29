@@ -1,9 +1,9 @@
 ﻿
 using System.Runtime.Versioning;
-using WyrewolwerowanyRewolwerowiec.Dto.GameProgress;
-using WyrewolwerowanyRewolwerowiec.UnitOfWork;
+using PhilsLab.Dto.GameProgress;
+using PhilsLab.UnitOfWork;
 
-namespace WyrewolwerowanyRewolwerowiec
+namespace PhilsLab
 {
     [SupportedOSPlatform("windows")]
     public class Factory

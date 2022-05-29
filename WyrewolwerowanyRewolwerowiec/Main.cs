@@ -3,7 +3,7 @@ using System.Runtime.Versioning;
 using System.Threading;
 using System.Security.Principal;
 
-namespace WyrewolwerowanyRewolwerowiec
+namespace PhilsLab
 {
     [SupportedOSPlatform("windows")]
     class Program

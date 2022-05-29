@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Runtime.Versioning;
-using WyrewolwerowanyRewolwerowiec.Utils;
+using PhilsLab.Utils;
 
-namespace WyrewolwerowanyRewolwerowiec.UnitOfWork
+namespace PhilsLab.UnitOfWork
 {
     [SupportedOSPlatform("windows")]
     public class AnimationManager : WriteManager

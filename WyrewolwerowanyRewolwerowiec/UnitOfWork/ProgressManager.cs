@@ -4,9 +4,9 @@ using System.IO;
 using System.Runtime.Versioning;
 using System.Security.Cryptography;
 using System.Text;
-using WyrewolwerowanyRewolwerowiec.Dto.GameProgress;
+using PhilsLab.Dto.GameProgress;
 
-namespace WyrewolwerowanyRewolwerowiec.UnitOfWork
+namespace PhilsLab.UnitOfWork
 {
     [SupportedOSPlatform("windows")]
     public class ProgressManager

@@ -2,7 +2,7 @@
 using System.Media;
 using System.Runtime.Versioning;
 
-namespace WyrewolwerowanyRewolwerowiec.UnitOfWork
+namespace PhilsLab.UnitOfWork
 {
     [SupportedOSPlatform("windows")]
     public class SoundManager

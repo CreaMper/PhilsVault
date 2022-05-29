@@ -6,11 +6,11 @@ using System.Linq;
 using System.Media;
 using System.Reflection;
 using System.Runtime.Versioning;
-using WyrewolwerowanyRewolwerowiec.Dto.GameProgress;
-using WyrewolwerowanyRewolwerowiec.UnitOfWork;
-using WyrewolwerowanyRewolwerowiec.Utils;
+using PhilsLab.Dto.GameProgress;
+using PhilsLab.UnitOfWork;
+using PhilsLab.Utils;
 
-namespace WyrewolwerowanyRewolwerowiec.Stages
+namespace PhilsLab.Stages
 {
     [SupportedOSPlatform("windows")]
     public class AlphaStage : WriteManager

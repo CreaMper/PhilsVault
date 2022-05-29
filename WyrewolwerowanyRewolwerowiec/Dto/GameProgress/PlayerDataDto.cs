@@ -1,4 +1,4 @@
-﻿namespace WyrewolwerowanyRewolwerowiec.Dto.GameProgress
+﻿namespace PhilsLab.Dto.GameProgress
 {
     public class PlayerDataDto
     {
