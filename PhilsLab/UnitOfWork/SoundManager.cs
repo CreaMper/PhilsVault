@@ -26,7 +26,7 @@ namespace PhilsLab.UnitOfWork
             return duration;
         }
 
-        public void StopType()
+        public void Stop()
         {
             var player = new SoundPlayer();
             player.Stop();

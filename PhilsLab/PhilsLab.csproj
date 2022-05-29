@@ -25,6 +25,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Assets\Icons\skull.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Assets\Sounds\bigBlack.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

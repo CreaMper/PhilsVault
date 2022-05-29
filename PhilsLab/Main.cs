@@ -20,9 +20,7 @@ namespace PhilsLab
             var factory = new Factory();
 
             factory.WindowManager.Initialise();
-
             factory.StageManager.LetTheGameBegins(args);
-            Thread.Sleep(_maxSleep);
         }
     }
 }

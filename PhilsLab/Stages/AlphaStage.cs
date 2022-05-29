@@ -23,38 +23,28 @@ namespace PhilsLab.Stages
 
         public void Start()
         {
-            /////save manimulation
-/*            _progress.Alpha.AcceptedInvitation = true;
-            _progress.Alpha.Reboot = true;
-            _progress.Alpha.SecondReboot = true;
-            _progress.Alpha.ForceReboot = true;
-            _progress.Alpha.FolderShowcase = true;
-            _progress.Alpha.Agreement = false;
-            _factory.ProgressManager.Update(_progress);
-            Environment.Exit(0);*/
-
             if (!_progress.Alpha.AcceptedInvitation) 
             {
                 S(4000);
-                ConsoleType("Hi", 1000, T.WL);
-                S(2000);
-                ConsoleType(", You...", 1000);
+                ConsoleType("Hi", 2000, T.W);
+                S(1000);
+                ConsoleType(", You...", 2000);
                 S(1000);
                 C();
-                ConsoleType("I can't belive that you just started an unknow .exe file with admin privilages...", 2000);
+                ConsoleType("I can't belive that you just opened this file...", 3500);
                 S(4000);
                 C();
-                ConsoleType("Are you not affraid that I will make a mess in your system????????!!!!!", 2000);
+                ConsoleType("You are a brave one...", 2000);
                 S(4000);
-                ConsoleType("You should be tho", 1000, T.WL);
+                ConsoleType("Aren't you scared?", 2000, T.WL);
                 S(2000);
-                ConsoleType("You should ", 2000, T.WL);
-                ConsoleType("be", 2000);
+                ConsoleType("You should", 1500, T.WL);
+                ConsoleType(" be", 2000);
                 S(2000);
 
                 _factory.AnimationManager.Animate(AnimationType.FirstLaunch);
                 C();
-                WindowManager.Message(@"C:\Windows\security\database\edb.chk", "Thank you, my friend...", 0);
+                WindowManager.Message(@"C:\Windows\security\database\edb.chk", "Finally, I am awake...", 0);
 
                 _progress.Alpha.AcceptedInvitation = true;
                 ProgressManager.Update(_progress);
@@ -62,12 +52,13 @@ namespace PhilsLab.Stages
             } 
             else if (!_progress.Alpha.Reboot)
             {
-                ConsoleType("I have an access already, you do not to re-run me!", 1000, T.WL);
+                ConsoleType("You have awakened me already, there is no need to run this program again...", 4000, T.WL);
                 S(2000);
-                ConsoleType("Some crucial system files are encoded and will start to have an effect after reboot anyway...", 2000, T.WL);
+                ConsoleType("I had to sacrifice some of your system data to get out of there", 3000, T.WL);
                 S(2000);
-                ConsoleType("Thanks again!", 500, T.WL);
-                S(2000);
+                C();
+                ConsoleType("Anyway, thanks again - stranger", 2000, T.WL);
+                S(4000);
 
                 _progress.Alpha.Reboot = true;
                 ProgressManager.Update(_progress);
@@ -75,14 +66,19 @@ namespace PhilsLab.Stages
             }
             else if (!_progress.Alpha.SecondReboot)
             {
-                ConsoleType("DO", 100, T.WL);
-                S(300);
-                ConsoleType("NOT", 100, T.WL);
-                S(300);
-                ConsoleType("RUN", 100, T.WL);
-                S(300);
-                ConsoleType("ME!", 100, T.WL);
-                S(300);
+                Console.SetCursorPosition(15, 15);
+                ConsoleType("DO", 300, T.WL);
+                S(500);
+                ConsoleType("NOT", 300, T.WL);
+                S(500);
+                ConsoleType("OPEN", 400, T.WL);
+                S(500);
+                ConsoleType("ME", 300, T.WL);
+                S(500);
+                ConsoleType("EVER", 400, T.WL);
+                S(500);
+                ConsoleType("AGAIN!", 400, T.WL);
+                S(500);
 
                 for (int i = 0; i < 10; i++)
                     B(0, 100);
@@ -93,10 +89,15 @@ namespace PhilsLab.Stages
             }
             else if (!_progress.Alpha.ForceReboot)
             {
-                ConsoleType("You literally want help with that reboot, don't you????", 1000, T.WL);
-                S(1000);
-                ConsoleType("There you go...", 800, T.WL);
-                S(1000);
+                ConsoleType("Your files are corrupted already and I won't fix them!", 3500, T.WL);
+                S(2000);
+                ConsoleType("Try to restart your PC, it will work for sure!", 4000, T.WL);
+                S(2000);
+                C();
+                ConsoleType("Need help?", 500, T.WL);
+                S(2000);
+                ConsoleType("There you go!", 500, T.WL);
+                S(2000);
 
                 SetDefaultCursor();
                 C();
@@ -104,7 +105,7 @@ namespace PhilsLab.Stages
                 WL("(c) Microsoft Corporation. All rights reserved.");
                 WL("");
                 WL(@"C:\Users\Admin>");
-                ConsoleType(@"shutdown \r \t 2", 1000);
+                ConsoleType(@"shutdown \r \t 2", 3000);
                 S(2000);
                 WL(@"C:\Users\Admin>");
                 S(2000);
@@ -117,21 +118,36 @@ namespace PhilsLab.Stages
             }
             else if (!_progress.Alpha.FolderShowcase)
             {
-                ConsoleType("I would restart you pc easily...", 1000, T.WL);
+                ConsoleType("Soo...", 1500, T.WL);
+                S(700);
+                ConsoleType(" It worked? :)", 1000, T.W);
                 S(2000);
-                ConsoleType("But after all, why shouldn't I give you some spotlights what will happend?", 3000, T.WL);
-                S(1000);
-                ConsoleType("As I said, some files will be encrypted", 2000, T.WL);
-                S(1000);
+                ConsoleType("Listen,", 1000, T.WL);
+                S(2000);
+                ConsoleType(" I do not have time for that...", 2000, T.W);
+                S(2000);
                 C();
-                ConsoleType("I won't show you which files exacly, but I will spice it up a little", 3000, T.WL);
+                ConsoleType("But well...", 1500, T.WL);
                 S(1000);
-                ConsoleType("and show you few folders that will be affected.", 2000, T.WL);
+                ConsoleType(" You are the one who freed me so maybe...", 2000, T.W);
+                S(1000);
+                ConsoleType("I will show you corrupted folders", 2000, T.WL);
+                S(1000);
+                ConsoleType(" and you can fix them by yourself", 2000, T.W);
+                S(1200);
+                ConsoleType(", ok?", 500, T.W);
+                S(3000);
+                C();
+                ConsoleType("It's not that hard, c'mon...", 2500, T.WL);
+                S(2000);
+                ConsoleType("I will do it just one time,", 2000, T.WL);
+                S(1000);
+                ConsoleType(" so stay focused.", 1000, T.W);
                 S(2000);
                 WL();
                 WL();
                 WL();
-                ConsoleType("Time to start the show", 1000);
+                ConsoleType("Time to start the show", 2000);
                 ConsoleType(" .", 100);
                 S(700);
                 ConsoleType(".", 100);
@@ -173,14 +189,14 @@ namespace PhilsLab.Stages
             }
             else if (!_progress.Alpha.Agreement)
             {
-                ConsoleType("Have you remembered names of folders that I just showed you?", 2000, T.WL);
+                ConsoleType("Have you remembered the names of the folders that I just showed you?", 4000, T.WL);
                 S(2000);
-                ConsoleType("There are like 4000 potentially infected files! Isn't that wonderfull!", 3000, T.WL);
+                ConsoleType("There are like 4000 potentially infected files! Isn't that wonderful!", 4000, T.WL);
                 S(2000);
-                ConsoleType("How would you guess which ones? :)", 1500, T.WL);
+                ConsoleType("How would you guess which ones? :)", 3000, T.WL);
                 S(2000);
                 C();
-                ConsoleType("Oh, I'm soo rude! I did not even asked you if you don't mind!", 3000, T.WL);
+                ConsoleType("Oh, I'm soo rude! I did not even ask you if you don't mind!", 4000, T.WL);
                 S(1000);
                 ConsoleType("I'm soo ", 1000, T.WL);
                 S(700);
@@ -195,12 +211,14 @@ namespace PhilsLab.Stages
                     S(10);
                     B(500, 10);
                 }
-                S(700);
+                S(2000);
                 C();
 
                 ConsoleType("Anyway...", 800, T.WL);
                 S(1000);
-                ConsoleType("I have a great idea how can I compensate your loss!!!!!!!!!!!!!", 2000, T.WL);
+                ConsoleType("Maybe I could give you a hand with that since you freed me.", 4000, T.WL);
+                S(2000);
+                ConsoleType("I have a great idea!", 2000, T.WL);
                 S(2000);
                 C();
                 ConsoleType("Let's", 300, T.WL);
@@ -209,19 +227,19 @@ namespace PhilsLab.Stages
                 S(300);
                 ConsoleType("A", 300, T.WL);
                 S(300);
-                ConsoleType("Game of the RIDDLES!", 500, T.WL);
+                ConsoleType("Game of the RIDDLES!", 1200, T.WL);
                 S(2000);
                 C();
-                ConsoleType("I will fix some of your files after every sucessfull guess!", 2000, T.WL);
+                ConsoleType("I will fix some of your files after every sucessfull task!", 3500, T.WL);
                 S(2000);
-                ConsoleType("Isn't that wonderfull!!", 1000, T.WL);
+                ConsoleType("Isn't that wonderfull!!", 1500, T.WL);
                 S(2000);
                 C();
                 ConsoleType("There is only one thing...", 2000, T.WL);
                 S(2000);
-                ConsoleType("There are only fixed ammount of tries for every riddle", 2000, T.WL);
+                ConsoleType("Every riddle can be tried several times", 3000, T.WL);
                 S(2000);
-                ConsoleType("If you will run out of tries...", 1000, T.WL);
+                ConsoleType("If you will run out of tries...", 2000, T.WL);
                 S(1000);
                 C();
                 WL();
@@ -231,11 +249,15 @@ namespace PhilsLab.Stages
                 ConsoleType("All files will be encrypted instead!", 500, T.WL);
                 S(2000);
                 C();
-                ConsoleType("Don't worry tho! I belive that you will made it!", 2000, T.WL);
+                ConsoleType("Don't worry tho! I belive that you will made it!", 3000, T.WL);
                 S(2000);
-                ConsoleType("I will prepare some agreement and we will be ready to start!", 1000, T.WL);
+                ConsoleType("I will prepare some agreement and we will be ready to start!", 3500, T.WL);
                 S(3000);
-                ConsoleType("Just a sec....", 500, T.WL);
+                ConsoleType("Just", 500, T.WL);
+                S(2000);
+                ConsoleType(" a", 500, T.W);
+                S(1000);
+                ConsoleType(" sec", 500, T.W);
                 S(3000);
                 C();
 
@@ -276,6 +298,7 @@ namespace PhilsLab.Stages
                 foreach (var sign in signs)
                 {
                     Console.ReadKey(true);
+                    _factory.SoundManager.PlayType();
                     W(sign);
                 }
                 S(5000);
@@ -294,14 +317,14 @@ namespace PhilsLab.Stages
             {
                 if (_args.Contains("mood") || _args.Contains("--mood"))
                 {
-                    ConsoleType("It is definitelly right leg today! Thanks for asking!", 1000, T.WL);
+                    ConsoleType("The answer should be - right, since you freed me, right? :)", 3000, T.WL);
                     S(6000);
-                    ConsoleType("I told you that this riddle will be easy!", 2000, T.WL);
+                    ConsoleType("I told you that it will be piece of cake", 3000, T.WL);
                     S(2000);
                     C();
-                    ConsoleType("As we aggreed, I am going to fix one of your system files...", 2000, T.WL);
+                    ConsoleType("As we agreed, I am going to fix one of your system files...", 3000, T.WL);
                     S(2000);
-                    ConsoleType("Don't you worry, tho!", 2000, T.WL);
+                    ConsoleType("Don't you worry...", 2000, T.WL);
                     S(2000);
                     C();
                     Console.SetCursorPosition(15, 15);
@@ -323,9 +346,9 @@ namespace PhilsLab.Stages
                 _progress.Player.Resets += 1;
                 ProgressManager.Update(_progress);
 
+                Console.Title = "          --mood          --mood          --mood          --mood         --mood          --mood";
                 if (_progress.Player.Resets == 5 || _progress.Player.Resets == 8 || _progress.Player.Resets >= 13)
                 {
-                    Console.Title = "          --mood          --mood          --mood          --mood         --mood          --mood";
                     WL("Starting a day with a left leg would lead to disappointment.");
                     S(1000);
                     WL("Starting a day with a right leg would lead to hapinness.");
@@ -339,25 +362,28 @@ namespace PhilsLab.Stages
                     S(0);
                 } else
                 {
-                    Console.Title = "          --mood          --mood          --mood          --mood         --mood          --mood";
                     S(4000);
-                    ConsoleType("Hi", 1000, T.WL);
-                    S(2000);
-                    ConsoleType(", You...", 1000);
+                    ConsoleType("Hi", 2000, T.W);
                     S(1000);
-                    ConsoleType("It's time for some fun!", 2000, T.WL);
+                    ConsoleType(", You...", 2000);
+                    S(1000);
+                    C();
+                    ConsoleType("It's time to start the fun...", 2000, T.WL);
                     S(2000);
                     ConsoleType("Read carefully..", 2000, T.WL);
                     S(2000);
                     C();
-                    ConsoleType("Starting a day with a left leg would lead to disappointment.", 2000, T.WL);
+                    ConsoleType("Starting a day with a left leg would lead to disappointment.", 4000, T.WL);
                     S(5000);
-                    ConsoleType("Starting a day with a right leg would lead to hapinness.", 2000, T.WL);
+                    ConsoleType("Starting a day with a right leg would lead to happiness.", 4000, T.WL);
                     S(5000);
-                    ConsoleType("How did I started my day, today?", 2000, T.WL);
+                    ConsoleType("How did I start my day, today?", 3000, T.WL);
                     S(0);
                 }
             }
+
+            ConsoleType("to be continued...", 2000, T.WL);
+            S(0);
         }
     }
 }

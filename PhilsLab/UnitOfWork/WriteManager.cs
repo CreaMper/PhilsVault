@@ -68,7 +68,7 @@ namespace PhilsLab.UnitOfWork
                 Console.Beep(freq, durat);
         }
 
-        public void ConsoleType(string str, int speed, T type = T.W)
+        public void ConsoleType(string str, int speed, T type = T.W, bool enableSound = true)
         {
             var stepTime = Convert.ToInt32(Math.Round((double)speed / (double)str.Length, 0));
 
@@ -78,10 +78,12 @@ namespace PhilsLab.UnitOfWork
             foreach (var character in str)
             {
                 W(character.ToString());
-                _soundManager.PlayType();
+                if (enableSound)
+                    _soundManager.PlayType();
                 Thread.Sleep(stepTime);
             }
-            _soundManager.StopType();
+            if (enableSound)
+                _soundManager.Stop();
         }
     }
 }

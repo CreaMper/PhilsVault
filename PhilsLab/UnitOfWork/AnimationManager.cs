@@ -47,28 +47,31 @@ namespace PhilsLab.UnitOfWork
                 Console.Title = tittleString;
                 increment++;
 
-                B(37 * i, 1);
+                _soundManager.Play("error.wav");
             }
+
+            _soundManager.Stop();
+            _soundManager.Play("error.wav");
         }
 
         private void AlphaJoker()
         {
-            CursorChange(ConsoleColor.Red, ConsoleColor.White, 10, 20);
             C();
+            CursorChange(ConsoleColor.Red, ConsoleColor.White, 10, 20);
 
             _soundManager.Play("bigBlack.wav");
             S(400);
-            ConsoleType("Riddle me this,", 900, T.W);
+            ConsoleType("Riddle me this,", 900, T.W, false);
             S(800);
-            ConsoleType(" riddle me that.", 800, T.W);
+            ConsoleType(" riddle me that.", 800, T.W, false);
             S(1500);
-            ConsoleType(" Who’s afraid ", 500, T.W);
+            ConsoleType(" Who’s afraid ", 500, T.W, false);
             S(100);
-            ConsoleType("of the big, black ", 1100, T.W);
+            ConsoleType("of the big, black ", 1100, T.W, false);
             S(200);
 
             Console.BackgroundColor = ConsoleColor.Black;
-            ConsoleType("skull?", 500, T.W);
+            ConsoleType("skull?", 500, T.W, false);
             S(2000);
 
             SetDefaultCursor();
