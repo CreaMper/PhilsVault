@@ -6,7 +6,7 @@ namespace PhilsLab.UnitOfWork
 {
     public class WindowManager
     {
-        private ProgressDto _progress;
+        private readonly ProgressDto _progress;
 
         public WindowManager(ProgressDto progress)
         {
@@ -15,11 +15,10 @@ namespace PhilsLab.UnitOfWork
 
         public void Initialise()
         {
-            //you can add some conditions here
             FirstLaunch();
         }
 
-        public void FirstLaunch()
+        public static void FirstLaunch()
         {
             Console.Title = "          mood          mood          mood          mood          mood          mood";
             Console.ForegroundColor = ConsoleColor.Red;
@@ -29,32 +28,22 @@ namespace PhilsLab.UnitOfWork
         }
 
         [DllImport("user32.dll")]
-        public static extern bool LockWorkStation();
-        public void LockWindows()
+        private static extern bool LockWorkStation();
+        public static void LockWindows()
         {
             LockWorkStation();
         }
 
         [DllImport("User32.dll", CharSet = CharSet.Unicode)]
         private static extern int MessageBox(IntPtr h, string m, string c, int type);
-        public int Message(string tittle, string message, int type)
+        public static int Message(string tittle, string message, int type)
         {
             return MessageBox((IntPtr)0, message, tittle, type);
         }
 
-        public void MessageVoid(string tittle, string message, int type)
+        public static void MessageVoid(string tittle, string message, int type)
         {
-            MessageBox((IntPtr)0, message, tittle, type);
+            _ = MessageBox((IntPtr)0, message, tittle, type);
         }
-
-        public void SetDefault()
-        {
-            Console.Title = "Command Prompt";
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.CursorSize = 1;
-            Console.Clear();
-        }
-
     }
 }

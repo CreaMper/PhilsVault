@@ -5,8 +5,8 @@ namespace PhilsLab.UnitOfWork
 {
     public class AnimationManager : WriteManager
     {
-        private WindowManager _windowManager;
-        private SoundManager _soundManager;
+        private readonly WindowManager _windowManager;
+        private readonly SoundManager _soundManager;
 
         public AnimationManager(WindowManager windowManager, SoundManager soundManager)
         {
@@ -53,27 +53,25 @@ namespace PhilsLab.UnitOfWork
 
         private void AlphaJoker()
         {
-            Console.SetCursorPosition(10, 20);
-            Console.BackgroundColor = ConsoleColor.White;
-            Console.ForegroundColor = ConsoleColor.Red;
+            CursorChange(ConsoleColor.Red, ConsoleColor.White, 10, 20);
             C();
 
             _soundManager.Play("bigBlack.wav");
             S(400);
-            ConsoleType("Riddle me this,", 900, T.W, false);
+            ConsoleType("Riddle me this,", 900, T.W);
             S(800);
-            ConsoleType(" riddle me that.", 800, T.W, false);
+            ConsoleType(" riddle me that.", 800, T.W);
             S(1500);
-            ConsoleType(" Who’s afraid ", 500, T.W, false);
+            ConsoleType(" Who’s afraid ", 500, T.W);
             S(100);
-            ConsoleType("of the big, black ", 1100, T.W, false);
+            ConsoleType("of the big, black ", 1100, T.W);
             S(200);
 
             Console.BackgroundColor = ConsoleColor.Black;
-            ConsoleType("skull?", 500, T.W, false);
+            ConsoleType("skull?", 500, T.W);
             S(2000);
 
-            _windowManager.SetDefault();
+            SetDefaultCursor();
         }
     }
 }

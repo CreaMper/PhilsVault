@@ -12,7 +12,7 @@ namespace PhilsLab.Stages
     {
         private static ProgressDto _progress;
         private static Factory _factory;
-        private string[] _args;
+        private readonly string[] _args;
         
         public AlphaStage(ProgressDto progress, string[] args)
         {
@@ -54,10 +54,10 @@ namespace PhilsLab.Stages
 
                 _factory.AnimationManager.Animate(AnimationType.FirstLaunch);
                 C();
-                _factory.WindowManager.Message(@"C:\Windows\security\database\edb.chk", "Thank you, my friend...", 0);
+                WindowManager.Message(@"C:\Windows\security\database\edb.chk", "Thank you, my friend...", 0);
 
                 _progress.Alpha.AcceptedInvitation = true;
-                _factory.ProgressManager.Update(_progress);
+                ProgressManager.Update(_progress);
                 Environment.Exit(0);
             } 
             else if (!_progress.Alpha.Reboot)
@@ -70,7 +70,7 @@ namespace PhilsLab.Stages
                 S(2000);
 
                 _progress.Alpha.Reboot = true;
-                _factory.ProgressManager.Update(_progress);
+                ProgressManager.Update(_progress);
                 Environment.Exit(0);
             }
             else if (!_progress.Alpha.SecondReboot)
@@ -88,7 +88,7 @@ namespace PhilsLab.Stages
                     B(0, 100);
 
                 _progress.Alpha.SecondReboot = true;
-                _factory.ProgressManager.Update(_progress);
+                ProgressManager.Update(_progress);
                 Environment.Exit(0);
             }
             else if (!_progress.Alpha.ForceReboot)
@@ -98,7 +98,7 @@ namespace PhilsLab.Stages
                 ConsoleType("There you go...", 800, T.WL);
                 S(1000);
 
-                _factory.WindowManager.SetDefault();
+                SetDefaultCursor();
                 C();
                 W("Microsoft Windows [Version 10.0.22000.675]");
                 WL("(c) Microsoft Corporation. All rights reserved.");
@@ -108,11 +108,11 @@ namespace PhilsLab.Stages
                 S(2000);
                 WL(@"C:\Users\Admin>");
                 S(2000);
-                
-                _factory.WindowManager.LockWindows();
+
+                WindowManager.LockWindows();
 
                 _progress.Alpha.ForceReboot = true;
-                _factory.ProgressManager.Update(_progress);
+                ProgressManager.Update(_progress);
                 Environment.Exit(0);
             }
             else if (!_progress.Alpha.FolderShowcase)
@@ -168,7 +168,7 @@ namespace PhilsLab.Stages
                     process.Kill();
 
                 _progress.Alpha.FolderShowcase = true;
-                _factory.ProgressManager.Update(_progress);
+                ProgressManager.Update(_progress);
                 Environment.Exit(0);
             }
             else if (!_progress.Alpha.Agreement)
@@ -239,7 +239,7 @@ namespace PhilsLab.Stages
                 S(3000);
                 C();
 
-                _factory.WindowManager.SetDefault();
+                SetDefaultCursor();
                 Console.OutputEncoding = System.Text.Encoding.Default;
 
                 WL("                    AGGREEMENT");
@@ -287,7 +287,7 @@ namespace PhilsLab.Stages
 
                 _progress.Player.Resets = 0;
                 _progress.Alpha.Agreement = true;
-                _factory.ProgressManager.Update(_progress);
+                ProgressManager.Update(_progress);
                 Environment.Exit(0);
             }
             else if (!_progress.Alpha.RiddleOne)
@@ -316,12 +316,12 @@ namespace PhilsLab.Stages
 
                     _progress.Player.Resets = 0;
                     _progress.Alpha.RiddleOne = true;
-                    _factory.ProgressManager.Update(_progress);
+                    ProgressManager.Update(_progress);
                     Environment.Exit(0);
                 }
 
                 _progress.Player.Resets += 1;
-                _factory.ProgressManager.Update(_progress);
+                ProgressManager.Update(_progress);
 
                 if (_progress.Player.Resets == 5 || _progress.Player.Resets == 8 || _progress.Player.Resets >= 13)
                 {

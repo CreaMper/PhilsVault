@@ -5,7 +5,7 @@ namespace PhilsLab.UnitOfWork
 {
     public class SoundManager
     {
-        private string _currentDir = Environment.CurrentDirectory + @"\Assets\Sounds\";
+        private readonly string _currentDir = Environment.CurrentDirectory + @"\Assets\Sounds\";
 
         public void Play(string filename)
         {

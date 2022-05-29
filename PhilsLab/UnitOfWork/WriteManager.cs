@@ -5,7 +5,7 @@ namespace PhilsLab.UnitOfWork
 {
     public class WriteManager
     {
-        public Random _rand = new Random();
+        public Random _rand = new();
 
         public enum T 
         {
@@ -13,17 +13,17 @@ namespace PhilsLab.UnitOfWork
             WL
         }
 
-        public void W (string str)
+        public static void W (string str)
         {
             Console.Write(str);
         }
 
-        public void WL(string str = null)
+        public static void WL(string str = null)
         {
             Console.Write($"\n\r{str}");
         }
 
-        public void S(int time)
+        public static void S(int time)
         {
             if (time == 0)
                 Thread.Sleep(int.MaxValue);
@@ -31,12 +31,30 @@ namespace PhilsLab.UnitOfWork
             Thread.Sleep(time);
         }
 
-        public void C()
+        public static void CursorChange(ConsoleColor cursor, ConsoleColor background, int xpos = 0, int ypos = 0)
+        {
+            if (ypos !=0 || xpos != 0)
+                Console.SetCursorPosition(xpos, ypos);
+
+            Console.BackgroundColor = background;
+            Console.ForegroundColor = cursor;
+        }
+
+        public static void SetDefaultCursor()
+        {
+            Console.Title = "Command Prompt";
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.CursorSize = 1;
+            Console.Clear();
+        }
+
+        public static void C()
         {
             Console.Clear();
         }
 
-        public void B(int freq = 0, int durat = 0)
+        public static void B(int freq = 0, int durat = 0)
         {
             if (freq == 0 || durat == 0)
                 Console.Beep();
@@ -44,7 +62,7 @@ namespace PhilsLab.UnitOfWork
                 Console.Beep(freq, durat);
         }
 
-        public void ConsoleType(string str, int speed, T type = T.W, bool randomise = true)
+        public static void ConsoleType(string str, int speed, T type = T.W)
         {
             var stepTime = Convert.ToInt32(Math.Round((double)speed / (double)str.Length, 0));
 
@@ -54,15 +72,6 @@ namespace PhilsLab.UnitOfWork
             foreach (var character in str)
             {
                 W(character.ToString());
-
-                if (randomise)
-                {
-                    //var randomisedStep = Convert.ToInt32(stepTime * 1+((double)_rand.Next(0, 40)/100.0));
-                    var randomisedStep = 1 - _rand.Next(20, 80)/100.0;
-
-                    Thread.Sleep(Convert.ToInt32(stepTime * randomisedStep));
-                }
-
                 Thread.Sleep(stepTime);
             }
         }

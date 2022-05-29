@@ -1,5 +1,4 @@
-﻿using System.Runtime.Versioning;
-using PhilsLab.Dto.GameProgress;
+﻿using PhilsLab.Dto.GameProgress;
 using PhilsLab.Stages;
 
 namespace PhilsLab.UnitOfWork

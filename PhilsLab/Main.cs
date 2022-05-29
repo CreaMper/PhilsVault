@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.Versioning;
 using System.Threading;
 using System.Security.Principal;
 
@@ -8,26 +7,22 @@ namespace PhilsLab
     class Program
     {
         static bool Admin => new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator);
+        static readonly int _maxSleep = int.MaxValue;
 
         static void Main(string[] args)
         {
-            //Check for admin
             if (!Admin)
             {
                 Console.WriteLine("Hi! Sorry to bother you, but before we start I do need to be started with admin privilages!");
-                Thread.Sleep(100000);
-                Environment.Exit(0);
+                Thread.Sleep(_maxSleep);
             }
 
-            //Game factory load
             var factory = new Factory();
 
-            //Console initalisation
             factory.WindowManager.Initialise();
 
-            //Stage selection
             factory.StageManager.LetTheGameBegins(args);
-            Thread.Sleep(100000);
+            Thread.Sleep(_maxSleep);
         }
     }
 }
