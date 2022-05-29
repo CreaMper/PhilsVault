@@ -11,8 +11,8 @@ namespace PhilsLab.UnitOfWork
     {
         private static readonly string _directoryName = "CDSGames";
         private static readonly string _fileName = "miracle.txt";
-        private static readonly string _freshDirectoryPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @$"{_directoryName}");
-        private static readonly string _progressPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @$"{_directoryName}\{_fileName}");
+        private static readonly string _freshDirectoryPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), $"{_directoryName}");
+        private static readonly string _progressPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), $"{_directoryName}\\{_fileName}");
 
         public static ProgressDto Load()
         {

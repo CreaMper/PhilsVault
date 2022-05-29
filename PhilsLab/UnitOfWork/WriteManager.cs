@@ -6,7 +6,7 @@ namespace PhilsLab.UnitOfWork
     public class WriteManager
     {
         private SoundManager _soundManager;
-        public Random _rand = new();
+        public Random _rand = new Random();
 
         public WriteManager()
         {
