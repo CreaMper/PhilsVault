@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32413.511
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhilsLab", "WyrewolwerowanyRewolwerowiec\PhilsLab.csproj", "{D9ED404E-7F94-4121-A2B8-B150DCE976F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhilsLab", "PhilsLab\PhilsLab.csproj", "{D9ED404E-7F94-4121-A2B8-B150DCE976F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
