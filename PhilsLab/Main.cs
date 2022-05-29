@@ -29,7 +29,6 @@ namespace PhilsLab
             //Stage selection
             factory.StageManager.LetTheGameBegins(args);
             Thread.Sleep(100000);
-
         }
     }
 }
