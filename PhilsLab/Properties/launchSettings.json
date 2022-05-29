@@ -2,7 +2,7 @@
   "profiles": {
     "PhilsLab": {
       "commandName": "Project",
-      "commandLineArgs": "mood"
+      "commandLineArgs": ""
     }
   }
 }

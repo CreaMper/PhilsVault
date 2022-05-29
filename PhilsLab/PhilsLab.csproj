@@ -7,6 +7,8 @@
     <ApplicationIcon>Assets\Icons\skull.ico</ApplicationIcon>
     <Win32Resource />
     <NoWin32Manifest>true</NoWin32Manifest>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
