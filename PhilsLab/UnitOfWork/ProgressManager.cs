@@ -1,14 +1,13 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.IO;
-using System.Runtime.Versioning;
 using System.Security.Cryptography;
 using System.Text;
 using PhilsLab.Dto.GameProgress;
+using System.Runtime.Versioning;
 
 namespace PhilsLab.UnitOfWork
 {
-    [SupportedOSPlatform("windows")]
     public class ProgressManager
     {
         private static string _directoryName = "CDSGames";

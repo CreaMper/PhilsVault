@@ -1,11 +1,8 @@
-﻿
-using System.Runtime.Versioning;
-using PhilsLab.Dto.GameProgress;
+﻿using PhilsLab.Dto.GameProgress;
 using PhilsLab.UnitOfWork;
 
 namespace PhilsLab
 {
-    [SupportedOSPlatform("windows")]
     public class Factory
     {
         public ProgressManager ProgressManager;

@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using System.Runtime.Versioning;
 using PhilsLab.Dto.GameProgress;
 
 namespace PhilsLab.UnitOfWork
 {
-    [SupportedOSPlatform("windows")]
     public class WindowManager
     {
         private ProgressDto _progress;

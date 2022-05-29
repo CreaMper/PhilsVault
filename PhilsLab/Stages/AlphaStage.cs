@@ -1,18 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
-using System.Media;
-using System.Reflection;
-using System.Runtime.Versioning;
 using PhilsLab.Dto.GameProgress;
 using PhilsLab.UnitOfWork;
 using PhilsLab.Utils;
 
 namespace PhilsLab.Stages
 {
-    [SupportedOSPlatform("windows")]
     public class AlphaStage : WriteManager
     {
         private static ProgressDto _progress;

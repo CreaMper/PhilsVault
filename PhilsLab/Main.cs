@@ -5,15 +5,14 @@ using System.Security.Principal;
 
 namespace PhilsLab
 {
-    [SupportedOSPlatform("windows")]
     class Program
     {
-        static bool _admin => new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator);
+        static bool Admin => new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator);
 
         static void Main(string[] args)
         {
             //Check for admin
-            if (!_admin)
+            if (!Admin)
             {
                 Console.WriteLine("Hi! Sorry to bother you, but before we start I do need to be started with admin privilages!");
                 Thread.Sleep(100000);

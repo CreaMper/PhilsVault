@@ -4,7 +4,6 @@ using PhilsLab.Stages;
 
 namespace PhilsLab.UnitOfWork
 {
-    [SupportedOSPlatform("windows")]
     public class StageManager
     {
         private static ProgressDto _progress;

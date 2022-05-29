@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Runtime.Versioning;
 using PhilsLab.Utils;
 
 namespace PhilsLab.UnitOfWork
 {
-    [SupportedOSPlatform("windows")]
     public class AnimationManager : WriteManager
     {
         private WindowManager _windowManager;
