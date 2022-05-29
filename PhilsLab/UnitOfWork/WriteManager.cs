@@ -5,7 +5,13 @@ namespace PhilsLab.UnitOfWork
 {
     public class WriteManager
     {
+        private SoundManager _soundManager;
         public Random _rand = new();
+
+        public WriteManager()
+        {
+            _soundManager = new SoundManager();
+        }
 
         public enum T 
         {
@@ -62,7 +68,7 @@ namespace PhilsLab.UnitOfWork
                 Console.Beep(freq, durat);
         }
 
-        public static void ConsoleType(string str, int speed, T type = T.W)
+        public void ConsoleType(string str, int speed, T type = T.W)
         {
             var stepTime = Convert.ToInt32(Math.Round((double)speed / (double)str.Length, 0));
 
@@ -72,8 +78,10 @@ namespace PhilsLab.UnitOfWork
             foreach (var character in str)
             {
                 W(character.ToString());
+                _soundManager.PlayType();
                 Thread.Sleep(stepTime);
             }
+            _soundManager.StopType();
         }
     }
 }

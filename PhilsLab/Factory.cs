@@ -11,6 +11,7 @@ namespace PhilsLab
         public ProgressDto _progress;
         public AnimationManager AnimationManager;
         public SoundManager SoundManager;
+        public WriteManager WriteManager;
 
         public Factory()
         {
@@ -20,6 +21,7 @@ namespace PhilsLab
             StageManager = new StageManager(progress);
             SoundManager = new SoundManager();
             AnimationManager = new AnimationManager(WindowManager, SoundManager);
+            WriteManager = new WriteManager();
         }
     }
 }
