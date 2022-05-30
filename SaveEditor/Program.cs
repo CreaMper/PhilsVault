@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using PhilsLab.Dto.GameProgress;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
@@ -31,6 +32,22 @@ namespace SaveEditor
                     var progress = JsonConvert.DeserializeObject<ProgressDto>(Decipher(readText));
                     File.WriteAllText(_progressPathEdit, JsonConvert.SerializeObject(progress, Formatting.Indented));
                     Console.WriteLine("File has been extracted");
+                    Console.WriteLine();
+
+                    Console.Write("Do you want to open the file? [Y] : ");
+                    key = Console.ReadKey(true);
+                    if (key.Key == ConsoleKey.Y)
+                        Process.Start("explorer.exe", _progressPathEdit);
+
+                    Console.WriteLine();
+                    Console.WriteLine("=================");
+                    Console.WriteLine();
+                    Console.WriteLine("Already edited? Do you want me to perform auto inject? [Y] :");
+                    key = Console.ReadKey(true);
+                    if (key.Key == ConsoleKey.Y)
+                        Inject();
+                    else
+                        Environment.Exit(0);
                 }
                 else
                 {
@@ -39,17 +56,7 @@ namespace SaveEditor
             }
             else if (key.Key == ConsoleKey.I)
             {
-                if (File.Exists(_progressPathEdit))
-                {
-                    var readText = File.ReadAllText(_progressPathEdit);
-                    var progress = JsonConvert.DeserializeObject<ProgressDto>(readText);
-                    File.WriteAllText(_progressPath, Cipher(JsonConvert.SerializeObject(progress, Formatting.None)));
-                    Console.WriteLine("File has been injected!");
-                }
-                else
-                {
-                    Console.WriteLine($"Cannot find edited save file at {_progressPathEdit}");
-                }
+                Inject();
             }
             else
             {
@@ -57,6 +64,21 @@ namespace SaveEditor
             }
 
             Console.ReadKey(false);
+        }
+
+        private static void Inject()
+        {
+            if (File.Exists(_progressPathEdit))
+            {
+                var readText = File.ReadAllText(_progressPathEdit);
+                var progress = JsonConvert.DeserializeObject<ProgressDto>(readText);
+                File.WriteAllText(_progressPath, Cipher(JsonConvert.SerializeObject(progress, Formatting.None)));
+                Console.WriteLine("File has been injected!");
+            }
+            else
+            {
+                Console.WriteLine($"Cannot find edited save file at {_progressPathEdit}");
+            }
         }
 
         private static string Decipher(string str)
