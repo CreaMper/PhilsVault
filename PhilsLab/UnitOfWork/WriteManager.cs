@@ -85,5 +85,11 @@ namespace PhilsLab.UnitOfWork
             if (enableSound)
                 _soundManager.Stop();
         }
+
+        public void FlushRead()
+        {
+            while (Console.KeyAvailable)
+                Console.ReadKey(true);
+        }
     }
 }

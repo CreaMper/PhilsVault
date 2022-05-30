@@ -187,7 +187,7 @@ namespace PhilsLab.Stages
                 ProgressManager.Update(_progress);
                 Environment.Exit(0);
             }
-            else if (!_progress.Alpha.Agreement)
+            else if (_progress.Alpha.Agreement)
             {
                 ConsoleType("Have you remembered the names of the folders that I just showed you?", 4000, T.WL);
                 S(2000);
@@ -293,6 +293,8 @@ namespace PhilsLab.Stages
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.SetCursorPosition(42, 15);
+
+                FlushRead();
 
                 var signs = new List<string>() { "Y", "E", "S", " ", "I", " ", "D", "O" };
                 foreach (var sign in signs)
