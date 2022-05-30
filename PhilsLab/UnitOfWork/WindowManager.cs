@@ -15,6 +15,7 @@ namespace PhilsLab.UnitOfWork
 
         public void Initialise()
         {
+            DisableQuickEdit();
             FirstLaunch();
         }
 
@@ -44,6 +45,28 @@ namespace PhilsLab.UnitOfWork
         public static void MessageVoid(string tittle, string message, int type)
         {
             _ = MessageBox((IntPtr)0, message, tittle, type);
+        }
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        static extern IntPtr GetStdHandle(int nStdHandle);
+
+        [DllImport("kernel32.dll")]
+        static extern bool GetConsoleMode(IntPtr hConsoleHandle, out uint lpMode);
+
+        [DllImport("kernel32.dll")]
+        static extern bool SetConsoleMode(IntPtr hConsoleHandle, uint dwMode);
+
+        public static void DisableQuickEdit()
+        {
+            const uint ENABLE_QUICK_EDIT = 0x0040;
+            const int STD_INPUT_HANDLE = -10;
+
+            IntPtr consoleHandle = GetStdHandle(STD_INPUT_HANDLE);
+            uint consoleMode;
+            GetConsoleMode(consoleHandle, out consoleMode);
+
+            consoleMode &= ~ENABLE_QUICK_EDIT;
+            SetConsoleMode(consoleHandle, consoleMode);
         }
     }
 }

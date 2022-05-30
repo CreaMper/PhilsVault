@@ -187,7 +187,7 @@ namespace PhilsLab.Stages
                 ProgressManager.Update(_progress);
                 Environment.Exit(0);
             }
-            else if (_progress.Alpha.Agreement)
+            else if (!_progress.Alpha.Agreement)
             {
                 ConsoleType("Have you remembered the names of the folders that I just showed you?", 4000, T.WL);
                 S(2000);
