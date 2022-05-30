@@ -15,8 +15,15 @@ namespace PhilsLab
 
                 var factory = new Factory();
 
-                factory.WindowManager.Initialise();
-                factory.StageManager.LetTheGameBegins(args);
+                try
+                {
+                    factory.WindowManager.Initialise();
+                    factory.StageManager.LetTheGameBegins(args);
+                }
+                catch (Exception ex)
+                {
+                    Console.Write("There is a problem, I can not run myself! I got an exception!");
+                }
             }
         }
     }
