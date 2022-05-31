@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace AssetBuilder
 {
@@ -52,15 +51,13 @@ namespace AssetBuilder
                 Console.WriteLine($"+{shortPath}");
             }
 
-            Build();
-
-/*            Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine("Do you want to continue? [Y]: ");
             var key = Console.ReadKey(true);
             if (key.Key == ConsoleKey.Y)
                 Build();
             else
-                return;*/
+                return;
 
         }
 
