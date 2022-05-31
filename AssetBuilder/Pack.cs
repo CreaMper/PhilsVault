@@ -7,18 +7,15 @@ using System.Threading.Tasks;
 
 namespace AssetBuilder
 {
-    public class Pack
+    public class Pack : Helper
     {
-        private readonly string _currentDir;
-        private readonly string _assetsDir;
-        private readonly List<string> _fileList;
-
         public Pack()
         {
             _currentDir = Directory.GetCurrentDirectory();
             _assetsDir = $@"{_currentDir}\Assets";
-            _fileList = new List<string>();
+            _filePathsList = new List<string>();
         }
+
         public void PackAssests()
         {
             Console.Clear();
@@ -32,7 +29,7 @@ namespace AssetBuilder
             //Recursion to be added later... For now one nest is sufficient
             var mainDirFiles = Directory.EnumerateFiles(_assetsDir);
             foreach (var file in mainDirFiles)
-                _fileList.Add(file);
+                _filePathsList.Add(file);
 
             var directories = Directory.EnumerateDirectories(_assetsDir).ToList();
             foreach (var directory in directories)
@@ -40,24 +37,31 @@ namespace AssetBuilder
                 var underFiles = Directory.EnumerateFiles(directory).ToList();
                 foreach (var file in underFiles)
                 {
-                    _fileList.Add(file);
+                    var shortName= file.Replace(_assetsDir, "");
+                    if (shortName.Count() <= 32)
+                        _filePathsList.Add(file);
+                    else
+                        Console.WriteLine($"ERROR: {shortName} have too long file name! Max = 64!");
                 }
             }
 
-            Console.WriteLine($"Found {_fileList.Count()} files!");
-            foreach (var file in _fileList)
+            Console.WriteLine($"Found {_filePathsList.Count()} files!");
+            foreach (var path in _filePathsList)
             {
-                var shortPath = file.Replace(_assetsDir, "");
+                var shortPath = path.Replace(_assetsDir, "");
                 Console.WriteLine($"+{shortPath}");
             }
 
-            Console.WriteLine();
+            Build();
+
+/*            Console.WriteLine();
             Console.WriteLine("Do you want to continue? [Y]: ");
             var key = Console.ReadKey(true);
             if (key.Key == ConsoleKey.Y)
                 Build();
             else
-                return;
+                return;*/
+
         }
 
         private void Build()
@@ -65,9 +69,52 @@ namespace AssetBuilder
             var writer = new BinaryWriter(File.Open($@"{_currentDir}\lab.bin", FileMode.Create));
             using (writer)
             {
-                Console.WriteLine("Creating empty binary file...");
-                writer.Write("Test!");
+                //HEADER
+                writer.Write(GetBytes(_binaryHeader));
+                Console.WriteLine("Binary header created!");
+
+                foreach (var path in _filePathsList)
+                {
+                    //FILENAME
+                    var fileNameBytes = GetBytes(Path.GetFileName(path));
+
+                    var fileNameSector = FullfilBytes(fileNameBytes, 64);
+                    writer.Write(fileNameSector);
+
+                    //FILESIZE
+                    var fileBytes = File.ReadAllBytes(path);
+                    var fileSizeBytes = GetBytes(fileBytes.Count());
+
+                    var fileSizeSector = FullfilBytes(fileSizeBytes, 32);
+                    writer.Write(fileSizeSector);
+
+                    //FILEDATA
+                    writer.Write(fileBytes);
+                }
+
+                Console.WriteLine("==============");
+                Console.WriteLine("Binary file created! No errors found!");
             }
+        }
+
+        private byte[] GetBytes(string str)
+        {
+            return Encoding.ASCII.GetBytes(str);
+        }
+
+        private byte[] GetBytes(int number)
+        {
+            return Encoding.ASCII.GetBytes(number.ToString());
+        }
+
+        private byte[] FullfilBytes(byte[] bytes, int size)
+        {
+            var designatedByteArray = new byte[size];
+
+            for (int i = 0; i < bytes.Count(); i++)
+                designatedByteArray[i] = bytes[i];
+
+            return designatedByteArray;
         }
     }
 }

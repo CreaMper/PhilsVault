@@ -1,0 +1,15 @@
+﻿#
+# 23 bytes = File header
+#
+
+#
+# 64 bytes = File name
+#
+
+#
+# 32 bytes = File size 
+#
+
+#
+# X bytes = File data
+#
