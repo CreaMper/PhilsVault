@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace AssetBuilder
 {
@@ -6,27 +7,29 @@ namespace AssetBuilder
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Phil's Lab assets builder!");
-            Console.WriteLine("[P] - Pack files at *\\Assets directory to binary");
-            Console.WriteLine("[U] - Unpack files at *\\Assets directory");
-            var key = Console.ReadKey(true);
+            var packEngine = new Pack();
 
-            Console.WriteLine("=================");
-            if (key.Key == ConsoleKey.P)
+            if (args.Contains("instant"))
             {
-                var packEngine = new Pack();
-                packEngine.PackAssests();
+                packEngine.PackAssests(true);
             }
-            else if (key.Key == ConsoleKey.U)
+            else 
             {
+                Console.WriteLine("Phil's Lab assets builder!");
+                Console.WriteLine("[P] - Pack files at *\\Assets directory to binary");
+                var key = Console.ReadKey(true);
 
+                Console.WriteLine("=================");
+                if (key.Key == ConsoleKey.P)
+                {
+                    packEngine.PackAssests();
+                }
+                else
+                {
+                    Console.WriteLine("Wrong option!");
+                    Console.ReadKey(false);
+                }
             }
-            else
-            {
-                Console.WriteLine("Wrong option!");
-            }
-
-            Console.ReadKey(false);
         }
     }
 }

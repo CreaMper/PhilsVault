@@ -15,8 +15,9 @@ namespace AssetBuilder
             _filePathsList = new List<string>();
         }
 
-        public void PackAssests()
+        public void PackAssests(bool instant = false)
         {
+
             Console.Clear();
 
             if (!Directory.Exists(_assetsDir))
@@ -51,18 +52,27 @@ namespace AssetBuilder
                 Console.WriteLine($"+{shortPath}");
             }
 
-            Console.WriteLine();
-            Console.WriteLine("Do you want to continue? [Y]: ");
-            var key = Console.ReadKey(true);
-            if (key.Key == ConsoleKey.Y)
+            if (instant)
+            {
                 Build();
+            }
             else
-                return;
+            {
+                Console.WriteLine();
+                Console.WriteLine("Do you want to continue? [Y]: ");
+                var key = Console.ReadKey(true);
+                if (key.Key == ConsoleKey.Y)
+                    Build();
+                else
+                    return;
 
+                Console.ReadKey(true);
+            }
         }
 
         private void Build()
         {
+            //cipher to add in feature...
             var writer = new BinaryWriter(File.Open($@"{_currentDir}\lab.bin", FileMode.Create));
             using (writer)
             {
