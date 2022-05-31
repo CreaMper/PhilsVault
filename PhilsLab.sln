@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{329F03FC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaveEditor", "SaveEditor\SaveEditor.csproj", "{59F8F25E-A2AF-4141-ABCF-472974FE56D5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetBuilder", "AssetBuilder\AssetBuilder.csproj", "{023C7ADE-41B9-4A47-A69B-72762229EC09}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,12 +25,17 @@ Global
 		{59F8F25E-A2AF-4141-ABCF-472974FE56D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59F8F25E-A2AF-4141-ABCF-472974FE56D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59F8F25E-A2AF-4141-ABCF-472974FE56D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{023C7ADE-41B9-4A47-A69B-72762229EC09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{023C7ADE-41B9-4A47-A69B-72762229EC09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{023C7ADE-41B9-4A47-A69B-72762229EC09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{023C7ADE-41B9-4A47-A69B-72762229EC09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{59F8F25E-A2AF-4141-ABCF-472974FE56D5} = {329F03FC-F3F5-473D-80FA-9E778B43E871}
+		{023C7ADE-41B9-4A47-A69B-72762229EC09} = {329F03FC-F3F5-473D-80FA-9E778B43E871}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B8D04214-91E4-4463-B77F-654A4DCCFA3A}

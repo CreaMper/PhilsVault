@@ -53,11 +53,13 @@ namespace PhilsLab.UnitOfWork
 
         private static string Cipher(string str)
         {
+            //More complex Cipher to be added
             return Convert.ToBase64String(ProtectedData.Protect(Encoding.Unicode.GetBytes(str), null, DataProtectionScope.LocalMachine));
         }
 
         private static string Decipher(string str)
         {
+            //More complex Cipher to be added
             return Encoding.Unicode.GetString(ProtectedData.Unprotect(Convert.FromBase64String(str), null, DataProtectionScope.LocalMachine));
         }
 
