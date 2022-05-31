@@ -17,7 +17,6 @@ namespace AssetBuilder
 
         public void PackAssests(bool instant = false)
         {
-
             Console.Clear();
 
             if (!Directory.Exists(_assetsDir))
