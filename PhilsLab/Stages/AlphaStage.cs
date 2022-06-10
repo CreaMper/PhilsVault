@@ -14,11 +14,13 @@ namespace PhilsLab.Stages
         private static Factory _factory;
         private readonly string[] _args;
         
-        public AlphaStage(ProgressDto progress, string[] args)
+        public AlphaStage(ProgressDto progress, string[] args, AssetManager assetManager)
         {
             _progress = progress;
             _factory = new Factory();
             _args = args;
+            _soundManager = new SoundManager(assetManager);
+            
         }
 
         public void Start()

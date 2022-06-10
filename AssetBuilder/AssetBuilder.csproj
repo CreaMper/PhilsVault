@@ -57,12 +57,10 @@
   <ItemGroup>
     <Content Include="BinaryStruture.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="build.bat" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>call "build.bat $(ConfigurationName)"</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>

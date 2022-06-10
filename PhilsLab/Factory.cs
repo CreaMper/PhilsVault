@@ -12,14 +12,16 @@ namespace PhilsLab
         public AnimationManager AnimationManager;
         public SoundManager SoundManager;
         public WriteManager WriteManager;
+        public AssetManager AssetManager;
 
         public Factory()
         {
+            AssetManager = new AssetManager();
             ProgressManager = new ProgressManager();
             var progress = ProgressManager.Load();
             WindowManager = new WindowManager(progress);
-            StageManager = new StageManager(progress);
-            SoundManager = new SoundManager();
+            StageManager = new StageManager(progress, AssetManager);
+            SoundManager = new SoundManager(AssetManager);
             AnimationManager = new AnimationManager(WindowManager, SoundManager);
             WriteManager = new WriteManager();
         }

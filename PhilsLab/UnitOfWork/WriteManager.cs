@@ -5,13 +5,8 @@ namespace PhilsLab.UnitOfWork
 {
     public class WriteManager
     {
-        private SoundManager _soundManager;
+        public SoundManager _soundManager;
         public Random _rand = new Random();
-
-        public WriteManager()
-        {
-            _soundManager = new SoundManager();
-        }
 
         public enum T 
         {

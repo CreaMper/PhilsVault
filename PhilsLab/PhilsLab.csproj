@@ -34,17 +34,19 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>none</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
@@ -89,17 +91,21 @@
     <Compile Include="Dto\GameProgress\AlphaDto.cs" />
     <Compile Include="Dto\GameProgress\PlayerDataDto.cs" />
     <Compile Include="Dto\GameProgress\ProgressDto.cs" />
+    <Compile Include="Dto\ResourceDto.cs" />
     <Compile Include="Factory.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stages\AlphaStage.cs" />
     <Compile Include="UnitOfWork\AnimationManager.cs" />
+    <Compile Include="UnitOfWork\AssetManager.cs" />
     <Compile Include="UnitOfWork\ProgressManager.cs" />
     <Compile Include="UnitOfWork\SoundManager.cs" />
     <Compile Include="UnitOfWork\StageManager.cs" />
     <Compile Include="UnitOfWork\WindowManager.cs" />
     <Compile Include="UnitOfWork\WriteManager.cs" />
     <Compile Include="Utils\AnimationType.cs" />
+    <Compile Include="Utils\FileTypeEnum.cs" />
+    <Compile Include="Utils\ResourceContainer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PhilsLab.UnitOfWork;
+using System;
 using System.Threading;
 
 namespace PhilsLab
@@ -14,7 +15,7 @@ namespace PhilsLab
                     Environment.Exit(0);
 
                 var factory = new Factory();
-
+                var assetManager = new AssetManager();
                 try
                 {
                     factory.WindowManager.Initialise();
