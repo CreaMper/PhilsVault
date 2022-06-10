@@ -12,6 +12,8 @@ namespace AssetBuilder
             if (args.Contains("instant"))
             {
                 packEngine.PackAssests(true);
+
+
             }
             else 
             {
