@@ -72,7 +72,7 @@ namespace AssetBuilder
         private void Build()
         {
             //cipher to add in feature...
-            var writer = new BinaryWriter(File.Open($@"{_currentDir}\lab.bin", FileMode.Create));
+            var writer = new BinaryWriter(File.Open($@"{_currentDir}\Vault.bin", FileMode.Create));
             using (writer)
             {
                 //HEADER

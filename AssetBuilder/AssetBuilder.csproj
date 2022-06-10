@@ -38,6 +38,9 @@
   <PropertyGroup>
     <StartupObject>AssetBuilder.Program</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -57,10 +60,15 @@
   <ItemGroup>
     <Content Include="BinaryStruture.txt" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Scripts\debug.bat" />
+    <None Include="Scripts\release.bat" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>if $(ConfigurationName) == Debug call "$(ProjectDir)Scripts\debug.bat"
+if $(ConfigurationName) == Release call "$(ProjectDir)Scripts\release.bat"</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>

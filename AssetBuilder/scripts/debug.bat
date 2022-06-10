@@ -1,0 +1,1 @@
+copy "AssetBuilder.exe" "..\..\..\PhilsLab\bin\Debug"
