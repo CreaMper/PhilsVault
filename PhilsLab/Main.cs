@@ -15,7 +15,6 @@ namespace PhilsLab
                     Environment.Exit(0);
 
                 var factory = new Factory();
-                var assetManager = new AssetManager();
                 try
                 {
                     factory.WindowManager.Initialise();

@@ -19,6 +19,11 @@ namespace PhilsLab.UnitOfWork
         private List<ResourceDto> Initialise()
         {
             var resourceList = new List<ResourceDto>();
+
+            if (!File.Exists("Vault.bin"))
+                Environment.Exit(1);
+            //throw new System.Exception("Do not remove my Vault, please?");
+
             var vaultFile = File.ReadAllBytes("Vault.bin").ToList();
 
             //read file header
