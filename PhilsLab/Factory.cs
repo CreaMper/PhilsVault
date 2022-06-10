@@ -1,4 +1,5 @@
-﻿using PhilsLab.Dto.GameProgress;
+﻿using Cryptography;
+using PhilsLab.Dto.GameProgress;
 using PhilsLab.UnitOfWork;
 
 namespace PhilsLab
@@ -13,11 +14,13 @@ namespace PhilsLab
         public SoundManager SoundManager;
         public WriteManager WriteManager;
         public AssetManager AssetManager;
+        public Encrypt Encrypt = new Encrypt();
+        public Decrypt Decrypt = new Decrypt();
 
         public Factory()
         {
             AssetManager = new AssetManager();
-            ProgressManager = new ProgressManager();
+            ProgressManager = new ProgressManager(Encrypt, Decrypt);
             var progress = ProgressManager.Load();
             WindowManager = new WindowManager(progress);
             StageManager = new StageManager(progress, AssetManager);

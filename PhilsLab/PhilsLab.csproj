@@ -275,6 +275,12 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cryptography\Cryptography.csproj">
+      <Project>{0cb62d64-43fe-4850-a9f8-d3d61a9bbfde}</Project>
+      <Name>Cryptography</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>if $(ConfigurationName) == Release call "$(ProjectDir)Scripts\release.bat"</PostBuildEvent>

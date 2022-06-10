@@ -4,12 +4,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.32413.511
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhilsLab", "PhilsLab\PhilsLab.csproj", "{B28ADA9A-D73A-4CDB-B020-1BB252B6E6C7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0CB62D64-43FE-4850-A9F8-D3D61A9BBFDE} = {0CB62D64-43FE-4850-A9F8-D3D61A9BBFDE}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{329F03FC-F3F5-473D-80FA-9E778B43E871}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaveEditor", "SaveEditor\SaveEditor.csproj", "{59F8F25E-A2AF-4141-ABCF-472974FE56D5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetBuilder", "AssetBuilder\AssetBuilder.csproj", "{023C7ADE-41B9-4A47-A69B-72762229EC09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cryptography", "Cryptography\Cryptography.csproj", "{0CB62D64-43FE-4850-A9F8-D3D61A9BBFDE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +34,10 @@ Global
 		{023C7ADE-41B9-4A47-A69B-72762229EC09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{023C7ADE-41B9-4A47-A69B-72762229EC09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{023C7ADE-41B9-4A47-A69B-72762229EC09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CB62D64-43FE-4850-A9F8-D3D61A9BBFDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CB62D64-43FE-4850-A9F8-D3D61A9BBFDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CB62D64-43FE-4850-A9F8-D3D61A9BBFDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CB62D64-43FE-4850-A9F8-D3D61A9BBFDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +45,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{59F8F25E-A2AF-4141-ABCF-472974FE56D5} = {329F03FC-F3F5-473D-80FA-9E778B43E871}
 		{023C7ADE-41B9-4A47-A69B-72762229EC09} = {329F03FC-F3F5-473D-80FA-9E778B43E871}
+		{0CB62D64-43FE-4850-A9F8-D3D61A9BBFDE} = {329F03FC-F3F5-473D-80FA-9E778B43E871}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B8D04214-91E4-4463-B77F-654A4DCCFA3A}

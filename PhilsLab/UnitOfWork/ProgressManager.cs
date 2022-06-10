@@ -1,9 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.IO;
-using System.Security.Cryptography;
-using System.Text;
 using PhilsLab.Dto.GameProgress;
+using Cryptography;
 
 namespace PhilsLab.UnitOfWork
 {
@@ -13,6 +12,14 @@ namespace PhilsLab.UnitOfWork
         private static readonly string _fileName = "miracle.txt";
         private static readonly string _freshDirectoryPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), $"{_directoryName}");
         private static readonly string _progressPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), $"{_directoryName}\\{_fileName}");
+        private static Encrypt _encrypt;
+        private static Decrypt _decrypt;
+
+        public ProgressManager(Encrypt encrypt, Decrypt decrypt)
+        {
+            _encrypt = encrypt;
+            _decrypt = decrypt;
+        }
 
         public static ProgressDto Load()
         {
@@ -22,13 +29,13 @@ namespace PhilsLab.UnitOfWork
                     Directory.CreateDirectory(_freshDirectoryPath);
 
                 var progress = GetStartProgress();
-                File.WriteAllText(_progressPath, Cipher(JsonConvert.SerializeObject(progress)));
+                File.WriteAllText(_progressPath, _encrypt.EncryptString(JsonConvert.SerializeObject(progress)));
 
                 return progress;
             } else
             {
                 string readText = File.ReadAllText(_progressPath);
-                var progress = JsonConvert.DeserializeObject<ProgressDto>(Decipher(readText));
+                var progress = JsonConvert.DeserializeObject<ProgressDto>(_decrypt.DecryptString(readText));
 
                 return progress;
             }
@@ -51,21 +58,9 @@ namespace PhilsLab.UnitOfWork
             };
         }
 
-        private static string Cipher(string str)
-        {
-            //More complex Cipher to be added
-            return Convert.ToBase64String(ProtectedData.Protect(Encoding.Unicode.GetBytes(str), null, DataProtectionScope.LocalMachine));
-        }
-
-        private static string Decipher(string str)
-        {
-            //More complex Cipher to be added
-            return Encoding.Unicode.GetString(ProtectedData.Unprotect(Convert.FromBase64String(str), null, DataProtectionScope.LocalMachine));
-        }
-
         public static void Update(ProgressDto progress)
         {
-            File.WriteAllText(_progressPath, Cipher(JsonConvert.SerializeObject(progress)));
+            File.WriteAllText(_progressPath, _encrypt.EncryptString(JsonConvert.SerializeObject(progress)));
         }
     }
 }
