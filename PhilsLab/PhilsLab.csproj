@@ -277,7 +277,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cryptography\Cryptography.csproj">
-      <Project>{0cb62d64-43fe-4850-a9f8-d3d61a9bbfde}</Project>
+      <Project>{0CB62D64-43FE-4850-A9F8-D3D61A9BBFDE}</Project>
       <Name>Cryptography</Name>
     </ProjectReference>
   </ItemGroup>

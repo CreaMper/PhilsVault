@@ -30,7 +30,7 @@ namespace SaveEditor
                 if (File.Exists(_progressPath))
                 {
                     var readText = File.ReadAllText(_progressPath);
-                    var progress = JsonConvert.DeserializeObject<ProgressDto>(_decrypt.DecryptString(readText));
+                    var progress = JsonConvert.DeserializeObject<ProgressDto>(_decrypt.DecryptData(readText));
                     File.WriteAllText(_progressPathEdit, JsonConvert.SerializeObject(progress, Formatting.Indented));
                     Console.WriteLine("File has been extracted");
                     Console.WriteLine();
@@ -73,7 +73,7 @@ namespace SaveEditor
             {
                 var readText = File.ReadAllText(_progressPathEdit);
                 var progress = JsonConvert.DeserializeObject<ProgressDto>(readText);
-                File.WriteAllText(_progressPath, _encrypt.EncryptString(JsonConvert.SerializeObject(progress, Formatting.None)));
+                File.WriteAllText(_progressPath, _encrypt.EncryptData(JsonConvert.SerializeObject(progress, Formatting.None)));
                 Console.WriteLine("File has been injected!");
             }
             else

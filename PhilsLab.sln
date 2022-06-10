@@ -13,6 +13,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaveEditor", "SaveEditor\SaveEditor.csproj", "{59F8F25E-A2AF-4141-ABCF-472974FE56D5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetBuilder", "AssetBuilder\AssetBuilder.csproj", "{023C7ADE-41B9-4A47-A69B-72762229EC09}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B28ADA9A-D73A-4CDB-B020-1BB252B6E6C7} = {B28ADA9A-D73A-4CDB-B020-1BB252B6E6C7}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cryptography", "Cryptography\Cryptography.csproj", "{0CB62D64-43FE-4850-A9F8-D3D61A9BBFDE}"
 EndProject

@@ -29,13 +29,13 @@ namespace PhilsLab.UnitOfWork
                     Directory.CreateDirectory(_freshDirectoryPath);
 
                 var progress = GetStartProgress();
-                File.WriteAllText(_progressPath, _encrypt.EncryptString(JsonConvert.SerializeObject(progress)));
+                File.WriteAllText(_progressPath, _encrypt.EncryptData(JsonConvert.SerializeObject(progress)));
 
                 return progress;
             } else
             {
                 string readText = File.ReadAllText(_progressPath);
-                var progress = JsonConvert.DeserializeObject<ProgressDto>(_decrypt.DecryptString(readText));
+                var progress = JsonConvert.DeserializeObject<ProgressDto>(_decrypt.DecryptData(readText));
 
                 return progress;
             }
@@ -60,7 +60,7 @@ namespace PhilsLab.UnitOfWork
 
         public static void Update(ProgressDto progress)
         {
-            File.WriteAllText(_progressPath, _encrypt.EncryptString(JsonConvert.SerializeObject(progress)));
+            File.WriteAllText(_progressPath, _encrypt.EncryptData(JsonConvert.SerializeObject(progress)));
         }
     }
 }

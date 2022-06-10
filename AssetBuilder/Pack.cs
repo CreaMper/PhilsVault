@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cryptography;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -85,17 +86,17 @@ namespace AssetBuilder
                     var fileNameBytes = GetBytes(Path.GetFileName(path));
 
                     var fileNameSector = FullfilBytes(fileNameBytes, 64);
-                    writer.Write(fileNameSector);
+                    writer.Write(_encrypt.EncryptData(fileNameSector));
 
                     //FILESIZE
                     var fileBytes = File.ReadAllBytes(path);
                     var fileSizeBytes = GetBytes(fileBytes.Count());
 
                     var fileSizeSector = FullfilBytes(fileSizeBytes, 32);
-                    writer.Write(fileSizeSector);
+                    writer.Write(_encrypt.EncryptData(fileSizeSector));
 
                     //FILEDATA
-                    writer.Write(fileBytes);
+                    writer.Write(_encrypt.EncryptData(fileBytes));
                 }
 
                 Console.WriteLine("==============");
