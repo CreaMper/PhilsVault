@@ -63,6 +63,10 @@ namespace PhilsLab.UnitOfWork
                 {
                     Difficulty = Utils.DifficultyEnum.NORMAL,
                     TextSpeed = Utils.SpeedEnum.MEDIUM
+                },
+                StageOne = new StageOneDto()
+                {
+                    LoginPhase = false
                 }
 
             };

@@ -6,7 +6,7 @@ using PhilsLab.Dto.GameProgress;
 using PhilsLab.UnitOfWork;
 using PhilsLab.Utils;
 
-namespace PhilsLab.Stages
+namespace PhilsLab.Stages.Legacy
 {
     public class AlphaStage : WriteManager
     {

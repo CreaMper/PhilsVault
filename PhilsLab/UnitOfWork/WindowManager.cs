@@ -30,6 +30,19 @@ namespace PhilsLab.UnitOfWork
             Console.Clear();
         }
 
+        public void StageOne(ProgressDto progress)
+        {
+            if (!_progress.StageOne.LoginPhase)
+            {
+                Console.Title = "CERN Intranet @ 192.168.25.142";
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.CursorSize = 1;
+                Console.Clear();
+            }
+
+        }
+
         [DllImport("user32.dll")]
         private static extern bool LockWorkStation();
         public static void LockWindows()

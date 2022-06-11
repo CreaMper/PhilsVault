@@ -1,5 +1,6 @@
 ﻿using PhilsLab.Dto.GameProgress;
 using PhilsLab.Stages;
+using PhilsLab.Stages.Legacy;
 
 namespace PhilsLab.UnitOfWork
 {
@@ -26,6 +27,14 @@ namespace PhilsLab.UnitOfWork
             }
 
             if (_progress.Player.Stage == 1)
+            {
+                _windowManager.StageOne(_progress);
+                var stage = new StageOne(_progress, args, _assetManager);
+                stage.Start();
+            }
+
+            //Legacy stages
+            if (_progress.Player.Stage == 888888)
             {
                 _windowManager.AlphaStage();
                 var stage = new AlphaStage(_progress, args, _assetManager);

@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // Ogólne informacje o zestawie są kontrolowane poprzez następujący 
 // zestaw atrybutów. Zmień wartości tych atrybutów, aby zmodyfikować informacje
 // powiązane z zestawem.
-[assembly: AssemblyTitle("Phill's Lab")]
-[assembly: AssemblyDescription("Who would guess?")]
+[assembly: AssemblyTitle("Phill's Vault")]
+[assembly: AssemblyDescription("Try to get in Phil's Vault!")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("CDSGames")]
-[assembly: AssemblyProduct("Phil's Lab")]
+[assembly: AssemblyProduct("Phil's Vault")]
 [assembly: AssemblyCopyright("CreaMper ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -33,6 +33,6 @@ using System.Runtime.InteropServices;
 // Możesz określić wszystkie wartości lub użyć domyślnych numerów kompilacji i poprawki
 // przy użyciu symbolu „*”, tak jak pokazano poniżej:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.3.0")]
-[assembly: AssemblyFileVersion("1.0.3.0")]
+[assembly: AssemblyVersion("1.0.4.0")]
+[assembly: AssemblyFileVersion("1.0.4.0")]
 [assembly: NeutralResourcesLanguage("en")]
