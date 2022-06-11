@@ -11,7 +11,7 @@ namespace PhilsLab.UnitOfWork
         public WindowManager(ProgressDto progress)
         {
             _progress = progress;
-            DisableQuickEdit();
+            ConsoleInitialise();
         }
 
         public void Introduction()
@@ -71,10 +71,26 @@ namespace PhilsLab.UnitOfWork
         [DllImport("kernel32.dll")]
         static extern bool SetConsoleMode(IntPtr hConsoleHandle, uint dwMode);
 
-        public static void DisableQuickEdit()
+        [DllImport("user32.dll")]
+        public static extern int DeleteMenu(IntPtr hMenu, int nPosition, int wFlags);
+
+        [DllImport("user32.dll")]
+        private static extern IntPtr GetSystemMenu(IntPtr hWnd, bool bRevert);
+
+        [DllImport("kernel32.dll", ExactSpelling = true)]
+        private static extern IntPtr GetConsoleWindow();
+
+        public static void ConsoleInitialise()
         {
             const uint ENABLE_QUICK_EDIT = 0x0040;
             const int STD_INPUT_HANDLE = -10;
+            const int MF_BYCOMMAND = 0x00000000;
+            const int SC_MINIMIZE = 0xF020;
+            const int SC_MAXIMIZE = 0xF030;
+            const int SC_SIZE = 0xF000;
+
+            Console.WindowHeight = 30;
+            Console.WindowWidth = 120;
 
             IntPtr consoleHandle = GetStdHandle(STD_INPUT_HANDLE);
             uint consoleMode;
@@ -82,6 +98,10 @@ namespace PhilsLab.UnitOfWork
 
             consoleMode &= ~ENABLE_QUICK_EDIT;
             SetConsoleMode(consoleHandle, consoleMode);
+
+            DeleteMenu(GetSystemMenu(GetConsoleWindow(), false), SC_MINIMIZE, MF_BYCOMMAND);
+            DeleteMenu(GetSystemMenu(GetConsoleWindow(), false), SC_MAXIMIZE, MF_BYCOMMAND);
+            DeleteMenu(GetSystemMenu(GetConsoleWindow(), false), SC_SIZE, MF_BYCOMMAND);
         }
     }
 }
