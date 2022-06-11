@@ -19,7 +19,7 @@ namespace PhilsLab
 
         public Factory()
         {
-            AssetManager = new AssetManager();
+            AssetManager = new AssetManager(Decrypt);
             ProgressManager = new ProgressManager(Encrypt, Decrypt);
             var progress = ProgressManager.Load();
             WindowManager = new WindowManager(progress);

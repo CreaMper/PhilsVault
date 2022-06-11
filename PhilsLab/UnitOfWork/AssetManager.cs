@@ -1,4 +1,5 @@
-﻿using PhilsLab.Dto;
+﻿using Cryptography;
+using PhilsLab.Dto;
 using PhilsLab.Utils;
 using System;
 using System.Collections.Generic;
@@ -10,9 +11,11 @@ namespace PhilsLab.UnitOfWork
     public class AssetManager : ResourceContainer
     {
         private List<ResourceDto> _resourceList;
+        private Decrypt _decrypt;
 
-        public AssetManager()
+        public AssetManager(Decrypt decrypt)
         {
+            _decrypt = decrypt;
             _resourceList = Initialise();
         }
 
@@ -22,7 +25,6 @@ namespace PhilsLab.UnitOfWork
 
             if (!File.Exists("Vault.bin"))
                 Environment.Exit(1);
-            //throw new System.Exception("Do not remove my Vault, please?");
 
             var vaultFile = File.ReadAllBytes("Vault.bin").ToList();
 
@@ -38,17 +40,17 @@ namespace PhilsLab.UnitOfWork
             while (vaultFile.Any())
             {
                 //Read file name
-                var fileName = GetString(vaultFile.Take(64).ToArray());
+                var fileName = GetString(_decrypt.DecryptData(vaultFile.Take(64).ToArray()));
                 vaultFile.RemoveRange(0, 64);
                 if (!_resources.Any(x => x.Equals(fileName)))
                     throw new Exception("One of the files in vault is corrupted!");
 
                 //read file size
-                var fileSize = Int32.Parse(GetString(vaultFile.Take(32).ToArray()));
+                var fileSize = Int32.Parse(GetString(_decrypt.DecryptData(vaultFile.Take(32).ToArray())));
                 vaultFile.RemoveRange(0, 32);
 
                 //read file data
-                var fileData = vaultFile.Take(fileSize).ToArray();
+                var fileData = _decrypt.DecryptData(vaultFile.Take(fileSize).ToArray());
                 vaultFile.RemoveRange(0, fileSize);
 
                 //create new resource

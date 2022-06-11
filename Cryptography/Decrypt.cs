@@ -12,10 +12,10 @@ namespace Cryptography
             return Encoding.Unicode.GetString(ProtectedData.Unprotect(Convert.FromBase64String(str), null, DataProtectionScope.LocalMachine));
         }
 
-        public string DecryptData(byte[] data)
+        public byte[] DecryptData(byte[] data)
         {
             //More complex Cipher to be added
-            return Encoding.Unicode.GetString(ProtectedData.Unprotect(data, null, DataProtectionScope.LocalMachine));
+            return data;
         }
     }
 }
