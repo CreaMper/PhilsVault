@@ -26,7 +26,7 @@ namespace PhilsLab.Stages
 
             IntroAnimation();
 
-            ConsoleType("You will see this screen only once ,so read carefully...", 500, T.W, false);
+            ConsoleType("You will see this screen only once, so read carefully...", 500, T.W, false);
             SetNextLineInSquare();
             ConsoleType("This game requires some IT knowledge, use google as much as you can.", 500, T.W, false);
             SetNextLineInSquare();

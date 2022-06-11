@@ -41,6 +41,11 @@ namespace PhilsLab.UnitOfWork
             Console.ForegroundColor = cursor;
         }
 
+        public static void Position(int left, int top)
+        {
+            Console.SetCursorPosition(left, top);
+        }
+
         public static void SetDefaultCursor()
         {
             Console.Title = "Command Prompt";
