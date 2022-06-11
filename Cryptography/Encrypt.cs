@@ -14,7 +14,6 @@ namespace Cryptography
 
         public byte[] EncryptData(byte[] data)
         {
-            //More complex Cipher to be added
             return data;
         }
     }

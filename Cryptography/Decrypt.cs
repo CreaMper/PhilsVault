@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -14,7 +15,6 @@ namespace Cryptography
 
         public byte[] DecryptData(byte[] data)
         {
-            //More complex Cipher to be added
             return data;
         }
     }

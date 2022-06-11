@@ -1,5 +1,4 @@
-﻿using PhilsLab.UnitOfWork;
-using System;
+﻿using System;
 using System.Threading;
 
 namespace PhilsLab
@@ -13,7 +12,7 @@ namespace PhilsLab
             {
                 if (!mutex.WaitOne(0, false))
                     Environment.Exit(0);
-
+                Console.WriteLine("Loading data...");
                 var factory = new Factory();
                 try
                 {

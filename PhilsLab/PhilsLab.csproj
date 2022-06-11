@@ -247,6 +247,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
+    <None Include="Scripts\debug.bat" />
     <None Include="Scripts\release.bat" />
   </ItemGroup>
   <ItemGroup>
