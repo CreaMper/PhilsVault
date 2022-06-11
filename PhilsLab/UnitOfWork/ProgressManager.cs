@@ -54,7 +54,17 @@ namespace PhilsLab.UnitOfWork
                 Alpha = new AlphaDto()
                 {
                     AcceptedInvitation = false
+                },
+                Introduction = new IntroductionDto()
+                {
+                    Completed = false
+                },
+                Settings = new SettingsDto()
+                {
+                    Difficulty = Utils.DifficultyEnum.NORMAL,
+                    TextSpeed = Utils.SpeedEnum.MEDIUM
                 }
+
             };
         }
 

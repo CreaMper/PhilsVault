@@ -14,8 +14,8 @@ namespace SaveEditor
         private static readonly string _progressPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), $"{_directoryName}\\{_fileName}");
         private static readonly string _progressPathEdit = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), $"{_directoryName}\\edit.json");
         
-        private static Encrypt _encrypt;
-        private static Decrypt _decrypt;
+        private static Encrypt _encrypt = new Encrypt();
+        private static Decrypt _decrypt = new Decrypt();
 
         static void Main(string[] args)
         {

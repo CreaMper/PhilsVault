@@ -11,15 +11,17 @@ namespace PhilsLab.UnitOfWork
         public WindowManager(ProgressDto progress)
         {
             _progress = progress;
-        }
-
-        public void Initialise()
-        {
             DisableQuickEdit();
-            FirstLaunch();
         }
 
-        public static void FirstLaunch()
+        public void Introduction()
+        {
+            Console.Title = "Phill's Vault by CDSGames";
+            Console.CursorSize = 1;
+            Console.Clear();
+        }
+
+        public void AlphaStage()
         {
             Console.Title = "          mood          mood          mood          mood          mood          mood";
             Console.ForegroundColor = ConsoleColor.Red;

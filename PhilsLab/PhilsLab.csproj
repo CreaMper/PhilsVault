@@ -71,6 +71,12 @@
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AudioSwitcher.AudioApi, Version=3.0.0.209, Culture=neutral, PublicKeyToken=fda5729e2db3a64f, processorArchitecture=MSIL">
+      <HintPath>..\packages\AudioSwitcher.AudioApi.3.0.0\lib\net40\AudioSwitcher.AudioApi.dll</HintPath>
+    </Reference>
+    <Reference Include="AudioSwitcher.AudioApi.CoreAudio, Version=3.0.0.209, Culture=neutral, PublicKeyToken=fda5729e2db3a64f, processorArchitecture=MSIL">
+      <HintPath>..\packages\AudioSwitcher.AudioApi.CoreAudio.3.0.0.1\lib\net40\AudioSwitcher.AudioApi.CoreAudio.dll</HintPath>
+    </Reference>
     <Reference Include="Costura, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Costura.Fody.5.7.0\lib\netstandard1.0\Costura.dll</HintPath>
     </Reference>
@@ -225,13 +231,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dto\GameProgress\AlphaDto.cs" />
+    <Compile Include="Dto\GameProgress\IntroductionDto.cs" />
     <Compile Include="Dto\GameProgress\PlayerDataDto.cs" />
     <Compile Include="Dto\GameProgress\ProgressDto.cs" />
     <Compile Include="Dto\ResourceDto.cs" />
+    <Compile Include="Dto\GameProgress\SettingsDto.cs" />
     <Compile Include="Factory.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stages\AlphaStage.cs" />
+    <Compile Include="Stages\Introduction.cs" />
     <Compile Include="UnitOfWork\AnimationManager.cs" />
     <Compile Include="UnitOfWork\AssetManager.cs" />
     <Compile Include="UnitOfWork\ProgressManager.cs" />
@@ -240,8 +249,10 @@
     <Compile Include="UnitOfWork\WindowManager.cs" />
     <Compile Include="UnitOfWork\WriteManager.cs" />
     <Compile Include="Utils\AnimationType.cs" />
+    <Compile Include="Utils\DifficultyEnum.cs" />
     <Compile Include="Utils\FileTypeEnum.cs" />
     <Compile Include="Utils\ResourceContainer.cs" />
+    <Compile Include="Utils\SpeedEnum.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -257,10 +268,16 @@
     <Content Include="Assets\Sounds\bigBlack.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\Sounds\error.wav">
+    <Content Include="Assets\Sounds\error01.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\Sounds\type.wav">
+    <Content Include="Assets\Sounds\error02.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Sounds\intro.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Sounds\type01.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

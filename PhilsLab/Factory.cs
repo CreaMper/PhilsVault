@@ -23,7 +23,7 @@ namespace PhilsLab
             ProgressManager = new ProgressManager(Encrypt, Decrypt);
             var progress = ProgressManager.Load();
             WindowManager = new WindowManager(progress);
-            StageManager = new StageManager(progress, AssetManager);
+            StageManager = new StageManager(progress, AssetManager, WindowManager);
             SoundManager = new SoundManager(AssetManager);
             AnimationManager = new AnimationManager(WindowManager, SoundManager);
             WriteManager = new WriteManager();
