@@ -16,7 +16,8 @@ namespace PhilsLab.Utils
                 //Sounds
                 "bigBlack.wav",
                 "error.wav",
-                "type.wav"
+                "type.wav",
+                "intro.wav"
             };
         }
     }

@@ -13,10 +13,10 @@ namespace PhilsLab
                 if (!mutex.WaitOne(0, false))
                     Environment.Exit(0);
                 Console.WriteLine("Loading data...");
-                var factory = new Factory();
+
                 try
                 {
-                    factory.WindowManager.Initialise();
+                    var factory = new Factory();
                     factory.StageManager.LetTheGameBegins(args);
                 }
                 catch (Exception ex)
