@@ -47,11 +47,11 @@ namespace PhilsLab.UnitOfWork
                 Console.Title = tittleString;
                 increment++;
 
-                _soundManager.Play("error.wav");
+                _soundManager.Play("error01.wav");
             }
 
             _soundManager.Stop();
-            _soundManager.Play("error.wav");
+            _soundManager.Play("error01.wav");
         }
 
         private void AlphaJoker()

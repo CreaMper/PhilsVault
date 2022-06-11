@@ -25,6 +25,16 @@ namespace PhilsLab.UnitOfWork
 
             soundPlayer.Stream = stream;
 
+            soundPlayer.Play();
+        }
+
+        public void PlayLoop(string filename)
+        {
+            var fileByte = _assetManager.GetResource(filename);
+            var stream = new MemoryStream(fileByte);
+
+            soundPlayer.Stream = stream;
+
             soundPlayer.PlayLooping();
         }
 
@@ -35,7 +45,7 @@ namespace PhilsLab.UnitOfWork
 
         public void PlayType()
         {
-            var fileByte = _assetManager.GetResource("type.wav");
+            var fileByte = _assetManager.GetResource("type01.wav");
             var stream = new MemoryStream(fileByte);
 
             soundPlayer.Stream = stream;
