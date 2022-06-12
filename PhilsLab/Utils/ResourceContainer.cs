@@ -18,7 +18,11 @@ namespace PhilsLab.Utils
                 "error01.wav",
                 "error02.wav",
                 "type01.wav",
-                "intro.wav"
+                "intro.wav",
+
+                //StageOne
+                "phoenixFile_doc.jpg",
+                "phoenixFile_log.txt"
             };
         }
     }

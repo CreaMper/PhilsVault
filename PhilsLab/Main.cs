@@ -21,7 +21,8 @@ namespace PhilsLab
                 }
                 catch (Exception ex)
                 {
-                    Console.Write("There is a problem, I can not run myself! I got an exception!");
+                    Console.Write($"There is a problem, I can not run myself! I got an exception! {ex.Message}");
+                    Console.ReadKey(true);
                 }
             }
         }

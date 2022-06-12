@@ -6,6 +6,7 @@
         ICO = 1,
         WAV = 2,
         JPG = 3,
-        JPEG = 4
+        JPEG = 4,
+        TXT = 5
     }
 }
