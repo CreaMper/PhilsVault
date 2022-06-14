@@ -1,6 +1,6 @@
 ﻿using Cryptography;
 using Newtonsoft.Json;
-using PhilsLab.Dto.GameProgress;
+using PhilsVault.Dto.GameProgress;
 using System;
 using System.Diagnostics;
 using System.IO;

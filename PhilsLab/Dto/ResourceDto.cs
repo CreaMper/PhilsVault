@@ -1,6 +1,6 @@
-﻿using PhilsLab.Utils;
+﻿using PhilsVault.Utils;
 
-namespace PhilsLab.Dto
+namespace PhilsVault.Dto
 {
     public class ResourceDto
     {

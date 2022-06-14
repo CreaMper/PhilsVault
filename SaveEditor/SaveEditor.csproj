@@ -68,9 +68,9 @@
       <Project>{0cb62d64-43fe-4850-a9f8-d3d61a9bbfde}</Project>
       <Name>Cryptography</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PhilsLab\PhilsLab.csproj">
+    <ProjectReference Include="..\PhilsLab\PhilsValut.csproj">
       <Project>{b28ada9a-d73a-4cdb-b020-1bb252b6e6c7}</Project>
-      <Name>PhilsLab</Name>
+      <Name>PhilsValut</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

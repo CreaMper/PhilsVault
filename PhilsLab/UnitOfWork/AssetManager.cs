@@ -1,12 +1,12 @@
 ﻿using Cryptography;
-using PhilsLab.Dto;
-using PhilsLab.Utils;
+using PhilsVault.Dto;
+using PhilsVault.Utils;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace PhilsLab.UnitOfWork
+namespace PhilsVault.UnitOfWork
 {
     public class AssetManager : ResourceContainer
     {

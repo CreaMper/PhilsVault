@@ -1,4 +1,4 @@
-﻿namespace PhilsLab.Utils
+﻿namespace PhilsVault.Utils
 {
     public enum SpeedEnum
     {

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using PhilsLab.Dto.GameProgress;
+using PhilsVault.Dto.GameProgress;
 
-namespace PhilsLab.UnitOfWork
+namespace PhilsVault.UnitOfWork
 {
     public class WindowManager
     {

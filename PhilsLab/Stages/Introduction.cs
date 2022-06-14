@@ -1,8 +1,8 @@
-﻿using PhilsLab.Dto.GameProgress;
-using PhilsLab.UnitOfWork;
+﻿using PhilsVault.Dto.GameProgress;
+using PhilsVault.UnitOfWork;
 using System;
 
-namespace PhilsLab.Stages
+namespace PhilsVault.Stages
 {
     public class Introduction : WriteManager
     {

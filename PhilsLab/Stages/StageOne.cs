@@ -1,11 +1,11 @@
-﻿using PhilsLab.Dto.GameProgress;
-using PhilsLab.UnitOfWork;
+﻿using PhilsVault.Dto.GameProgress;
+using PhilsVault.UnitOfWork;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace PhilsLab.Stages
+namespace PhilsVault.Stages
 {
     public class StageOne : WriteManager
     {

@@ -2,7 +2,7 @@
 using System.IO;
 using System.Media;
 
-namespace PhilsLab.UnitOfWork
+namespace PhilsVault.UnitOfWork
 {
     public class SoundManager
     {

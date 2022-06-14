@@ -1,9 +1,9 @@
-﻿using PhilsLab.Dto.GameProgress;
-using PhilsLab.UnitOfWork;
+﻿using PhilsVault.Dto.GameProgress;
+using PhilsVault.UnitOfWork;
 using System;
 using System.Threading;
 
-namespace PhilsLab
+namespace PhilsVault
 {
     class Program
     {

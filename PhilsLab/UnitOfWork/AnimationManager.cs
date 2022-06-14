@@ -1,7 +1,7 @@
 ﻿using System;
-using PhilsLab.Utils;
+using PhilsVault.Utils;
 
-namespace PhilsLab.UnitOfWork
+namespace PhilsVault.UnitOfWork
 {
     public class AnimationManager : WriteManager
     {

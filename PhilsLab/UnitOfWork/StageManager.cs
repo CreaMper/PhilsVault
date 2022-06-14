@@ -1,9 +1,9 @@
-﻿using PhilsLab.Dto.GameProgress;
-using PhilsLab.Stages;
-using PhilsLab.Stages.Legacy;
+﻿using PhilsVault.Dto.GameProgress;
+using PhilsVault.Stages;
+using PhilsVault.Stages.Legacy;
 using System;
 
-namespace PhilsLab.UnitOfWork
+namespace PhilsVault.UnitOfWork
 {
     public class StageManager
     {

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using PhilsLab.Dto.GameProgress;
-using PhilsLab.UnitOfWork;
-using PhilsLab.Utils;
+using PhilsVault.Dto.GameProgress;
+using PhilsVault.UnitOfWork;
+using PhilsVault.Utils;
 
-namespace PhilsLab.Stages.Legacy
+namespace PhilsVault.Stages.Legacy
 {
     public class AlphaStage : WriteManager
     {

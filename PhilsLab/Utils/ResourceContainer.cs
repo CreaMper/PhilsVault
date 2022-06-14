@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace PhilsLab.Utils
+namespace PhilsVault.Utils
 {
     public class ResourceContainer
     {

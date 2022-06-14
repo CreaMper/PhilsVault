@@ -1,4 +1,4 @@
-﻿namespace PhilsLab.Dto.GameProgress
+﻿namespace PhilsVault.Dto.GameProgress
 {
     public class IntroductionDto
     {

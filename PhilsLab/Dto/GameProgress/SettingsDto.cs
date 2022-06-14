@@ -1,6 +1,6 @@
-﻿using PhilsLab.Utils;
+﻿using PhilsVault.Utils;
 
-namespace PhilsLab.Dto.GameProgress
+namespace PhilsVault.Dto.GameProgress
 {
     public class SettingsDto
     {

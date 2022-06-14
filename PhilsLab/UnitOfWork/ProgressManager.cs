@@ -1,10 +1,10 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.IO;
-using PhilsLab.Dto.GameProgress;
+using PhilsVault.Dto.GameProgress;
 using Cryptography;
 
-namespace PhilsLab.UnitOfWork
+namespace PhilsVault.UnitOfWork
 {
     public class ProgressManager
     {

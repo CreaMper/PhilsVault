@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace PhilsLab.UnitOfWork
+namespace PhilsVault.UnitOfWork
 {
     public class WriteManager
     {
