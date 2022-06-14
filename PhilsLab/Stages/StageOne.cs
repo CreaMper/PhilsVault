@@ -10,14 +10,12 @@ namespace PhilsVault.Stages
     public class StageOne : WriteManager
     {
         private static ProgressDto _progress;
-        private static Factory _factory;
         private readonly string[] _args;
         private static AssetManager _assetManager;
 
         public StageOne(ProgressDto progress, string[] args, AssetManager assetManager)
         {
             _progress = progress;
-            _factory = new Factory();
             _args = args;
             _soundManager = new SoundManager(assetManager);
             _assetManager = assetManager;
@@ -120,7 +118,7 @@ namespace PhilsVault.Stages
                         for (int i = 0; i < 10; i++)
                         {
                             Console.ReadKey(true);
-                            _factory.SoundManager.PlayType();
+                            _soundManager.PlayType();
                             W("*");
                         }
 
@@ -174,7 +172,6 @@ namespace PhilsVault.Stages
                 WL("Downloading data...");
                 S(500);
 
-                //File creation
                 if (!Directory.Exists("HALO"))
                     Directory.CreateDirectory("HALO");
 
@@ -184,13 +181,11 @@ namespace PhilsVault.Stages
                     File.WriteAllBytes(@"HALO\log.txt", fileData);
                 }
 
-
                 if (!File.Exists(@"HALO\exp-gci-2548290.corr"))
                 {
                     var fileData = _assetManager.GetResource("phoenixFile_doc.jpg");
                     File.WriteAllBytes(@"HALO\exp-gci-2548290.corr", fileData);
                 }
-                ///////////////////
 
                 WL("Downloading data...");
                 S(500);
@@ -245,7 +240,7 @@ namespace PhilsVault.Stages
                             break;
 
                         data.Add(key.KeyChar.ToString());
-                        _factory.SoundManager.PlayType();
+                        _soundManager.PlayType();
                     }
 
                     var dataString = string.Empty;

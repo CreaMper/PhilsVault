@@ -9,8 +9,8 @@ namespace PhilsVault
     {
         static void Main(string[] args)
         {
-            var mutex_id = "PhilsLab";
-            using (Mutex mutex = new Mutex(false, mutex_id))
+            var mutex_id = "Phil's Vault";
+            using (var mutex = new Mutex(false, mutex_id))
             {
                 if (!mutex.WaitOne(0, false))
                     Environment.Exit(0);

@@ -10,8 +10,8 @@ namespace PhilsVault.Managers
 {
     public class AssetManager : ResourceContainer
     {
-        private List<ResourceDto> _resourceList;
-        private Decrypt _decrypt;
+        private readonly List<ResourceDto> _resourceList;
+        private readonly Decrypt _decrypt;
 
         public AssetManager(Decrypt decrypt)
         {
@@ -24,7 +24,7 @@ namespace PhilsVault.Managers
             var resourceList = new List<ResourceDto>();
 
             if (!File.Exists("Vault.bin"))
-                Environment.Exit(1);
+                throw new Exception("Vault does not exists!");
 
             var vaultFile = File.ReadAllBytes("Vault.bin").ToList();
 

@@ -21,15 +21,6 @@ namespace PhilsVault.Managers
             Console.Clear();
         }
 
-        public void AlphaStage()
-        {
-            Console.Title = "          mood          mood          mood          mood          mood          mood";
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.BackgroundColor = ConsoleColor.White;
-            Console.CursorSize = 1;
-            Console.Clear();
-        }
-
         public void StageOne(ProgressDto progress)
         {
             if (!_progress.StageOne.LoginPhase || !_progress.StageOne.PhoenixFile)
@@ -48,18 +39,6 @@ namespace PhilsVault.Managers
         public static void LockWindows()
         {
             LockWorkStation();
-        }
-
-        [DllImport("User32.dll", CharSet = CharSet.Unicode)]
-        private static extern int MessageBox(IntPtr h, string m, string c, int type);
-        public static int Message(string tittle, string message, int type)
-        {
-            return MessageBox((IntPtr)0, message, tittle, type);
-        }
-
-        public static void MessageVoid(string tittle, string message, int type)
-        {
-            _ = MessageBox((IntPtr)0, message, tittle, type);
         }
 
         [DllImport("kernel32.dll", SetLastError = true)]

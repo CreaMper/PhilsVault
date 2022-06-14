@@ -9,7 +9,7 @@ namespace PhilsVault.Managers
     public class ProgressManager
     {
         private static readonly string _directoryName = "CDSGames";
-        private static readonly string _fileName = "miracle.txt";
+        private static readonly string _fileName = "progress.txt";
         private static readonly string _freshDirectoryPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), $"{_directoryName}");
         private static readonly string _progressPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), $"{_directoryName}\\{_fileName}");
         private static Encrypt _encrypt;
@@ -32,7 +32,8 @@ namespace PhilsVault.Managers
                 File.WriteAllText(_progressPath, _encrypt.EncryptData(JsonConvert.SerializeObject(progress)));
 
                 return progress;
-            } else
+            } 
+            else
             {
                 string readText = File.ReadAllText(_progressPath);
                 var progress = JsonConvert.DeserializeObject<ProgressDto>(_decrypt.DecryptData(readText));
@@ -62,9 +63,9 @@ namespace PhilsVault.Managers
                 },
                 StageOne = new StageOneDto()
                 {
-                    LoginPhase = false
+                    LoginPhase = false,
+                    PhoenixFile = false
                 }
-
             };
         }
 

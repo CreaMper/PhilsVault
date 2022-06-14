@@ -1,17 +1,16 @@
 ﻿using System.Resources;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // Ogólne informacje o zestawie są kontrolowane poprzez następujący 
 // zestaw atrybutów. Zmień wartości tych atrybutów, aby zmodyfikować informacje
 // powiązane z zestawem.
-[assembly: AssemblyTitle("Phill's Vault")]
-[assembly: AssemblyDescription("Try to get in Phil's Vault!")]
+[assembly: AssemblyTitle("Phil's Vault")]
+[assembly: AssemblyDescription("Can you tell who's Phil?")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("CDSGames")]
+[assembly: AssemblyCompany("CDS Games")]
 [assembly: AssemblyProduct("Phil's Vault")]
-[assembly: AssemblyCopyright("CreaMper ©  2022")]
+[assembly: AssemblyCopyright("CDS Games ©2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -33,6 +32,6 @@ using System.Runtime.InteropServices;
 // Możesz określić wszystkie wartości lub użyć domyślnych numerów kompilacji i poprawki
 // przy użyciu symbolu „*”, tak jak pokazano poniżej:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.4.0")]
-[assembly: AssemblyFileVersion("1.0.4.0")]
+[assembly: AssemblyVersion("1.1.0.0")]
+[assembly: AssemblyFileVersion("1.1.0.0")]
 [assembly: NeutralResourcesLanguage("en")]
