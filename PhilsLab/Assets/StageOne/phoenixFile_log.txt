@@ -1,1 +1,14 @@
-asdasd
+[ADD] EXP-SDD-2344 | johny.walker @ 25.04.2022
+[UPDATED] EXP-S2D-1114 | matia.worlen-churc @ 25.04.2022
+[ADDEDUSER] mikau.mass | matia.worlen-churc @ 25.04.2022
+[ADD] user/info/exp-definition | mike.wazowsky @ 26.04.2022
+[UPDATED] user/info/exp-definition | mike.wazowsky @ 26.04.2022
+[ADD] EXP-INF-2011 | mikau.mass @ 26.04.2022
+[ADD] EXP-INF-2012 | mikau.mass @ 26.04.2022
+[ADD] EXP-INF-2013 | mikau.mass @ 26.04.2022
+[ADD] EXP-SDD-2344 | gagenau.string @ 26.04.2022
+[ADD] EXP-SDD-2345 | johny.walker @ 26.04.2022
+[EDIT] EXP-INF-2013 | mikau.mass @ 28.04.2022
+[REMOVE] * | TRT-ADMIN @ 29.04.2022
+[ERROR] Connection lost!
+[ERROR] The remaining files can be corrupted!

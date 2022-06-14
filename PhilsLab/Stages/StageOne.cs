@@ -27,6 +27,11 @@ namespace PhilsLab.Stages
         {
             if (!_progress.StageOne.LoginPhase)
             {
+                Position(30, 15);
+                ConsoleType("Chapter I: The Lever", 3000);
+                S(4000);
+                C();
+
                 Position(5, 150);
                 W("Forgot password? Try to start in ");
 
@@ -168,7 +173,7 @@ namespace PhilsLab.Stages
 
                 if (!File.Exists(@"HALO\log.txt"))
                 {
-                    var fileData = _assetManager.GetResource("phoenixFile_log.txt"); //Add log file more info 
+                    var fileData = _assetManager.GetResource("phoenixFile_log.txt");
                     File.WriteAllBytes(@"HALO\log.txt", fileData);
                 }
 
@@ -191,7 +196,8 @@ namespace PhilsLab.Stages
 
                 WL("phil.forker@192.168.25.142# ");
 
-                S(180000);
+                //S(180000);
+                S(2000);
 
                 ConsoleType(@"con db 'physic-dep' 110 021", 2800, T.W);
                 S(1200);
@@ -205,6 +211,8 @@ namespace PhilsLab.Stages
                 WL("Welcome to Physic Department!");
                 WL("");
                 S(1000);
+
+                Console.Title = "CERTN Intranet @ 192.168.211.21";
 
                 WL("phil.forker@192.168.211.21# ");
                 S(4000);
@@ -244,9 +252,78 @@ namespace PhilsLab.Stages
                     }
                     else
                     {
-                        WL("CORRECT");
+                        break;
                     }
                 }
+
+                WL("Date is correct.. Accessing the file...");
+                S(1200);
+
+                WL("ERR203-S: Cannot open 25042022.rar, file header is corrupted!");
+                S(3000);
+
+                WL("ERR203-S: Cannot open 25042022.rar, file header is corrupted!");
+                S(1200);
+
+                WL("");
+                WL("Error occured. Do you want to download it anyway? [Y/N] : ");
+                S(3000);
+
+                ConsoleType("Y", 200, T.W);
+                S(3000);
+
+                WL("Downloading data...");
+                S(500);
+
+                if (!File.Exists("25042022.rar"))
+                {
+                    var fileData = _assetManager.GetResource("25042022.rar");
+                    File.WriteAllBytes("25042022.rar", fileData);
+                }
+
+                if (!File.Exists("phill_is_dead.wav"))
+                {
+                    var fileData = _assetManager.GetResource("phill_is_dead.wav");
+                    File.WriteAllBytes("emergency-call-25042022.wav", fileData);
+                }
+
+                WL("Downloading data...");
+                S(700);
+                WL("Downloading data...");
+                S(1200);
+                WL("Downloading data...");
+                S(3000);
+
+                CursorChange(ConsoleColor.DarkRed, ConsoleColor.Black);
+
+                WL("ERR-04W: Unauthorized transaction.");
+                S(1200);
+                WL("ERR-21W: User credentials does not match!");
+                S(2000);
+                WL("ERR-412: User account is set as inactive!");
+                S(3000);
+                WL("ERR-666: Violation of the Europe Security Act!");
+                S(4000);
+                WL("Destroying all data..");
+                S(1200);
+                WL("Connection aborted!");
+                S(4000);
+
+                CursorChange(ConsoleColor.Yellow, ConsoleColor.Black, 50, Console.CursorTop+4);
+
+                ConsoleType("They know you are here.", 2000, T.W);
+                S(2000);
+
+                ConsoleType(" You have 42 seconds left.", 2000, T.W);
+                S(2000);
+
+                ConsoleType(" Run, stranger...", 800, T.W);
+
+                S(10000);
+
+                _progress.StageOne.PhoenixFile = true;
+                ProgressManager.Update(_progress);
+                Environment.Exit(0);
             }
         }
 

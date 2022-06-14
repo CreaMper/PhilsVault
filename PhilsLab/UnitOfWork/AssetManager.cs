@@ -79,6 +79,8 @@ namespace PhilsLab.UnitOfWork
                 type = FileTypeEnum.JPEG;
             else if (fileName.Contains(".txt"))
                 type = FileTypeEnum.TXT;
+            else if (fileName.Contains(".rar"))
+                type = FileTypeEnum.TXT;
 
             if (type == FileTypeEnum.CORRUPTED)
                 throw new Exception("File is corrupted!");

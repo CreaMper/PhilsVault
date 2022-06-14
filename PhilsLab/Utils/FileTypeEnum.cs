@@ -7,6 +7,7 @@
         WAV = 2,
         JPG = 3,
         JPEG = 4,
-        TXT = 5
+        TXT = 5,
+        RAR = 6
     }
 }

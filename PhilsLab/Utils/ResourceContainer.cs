@@ -22,7 +22,9 @@ namespace PhilsLab.Utils
 
                 //StageOne
                 "phoenixFile_doc.jpg",
-                "phoenixFile_log.txt"
+                "phoenixFile_log.txt",
+                "phill_is_dead.wav",
+                "25042022.rar"
             };
         }
     }

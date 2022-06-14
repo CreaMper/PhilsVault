@@ -1,6 +1,7 @@
 ﻿using PhilsLab.Dto.GameProgress;
 using PhilsLab.Stages;
 using PhilsLab.Stages.Legacy;
+using System;
 
 namespace PhilsLab.UnitOfWork
 {
@@ -40,6 +41,10 @@ namespace PhilsLab.UnitOfWork
                 var stage = new AlphaStage(_progress, args, _assetManager);
                 stage.Start();
             }
+
+            Console.Clear();
+            Console.WriteLine("There is not more content! Thanks for playing, for now... :)");
+            Console.ReadKey();
         }
     }
 }
