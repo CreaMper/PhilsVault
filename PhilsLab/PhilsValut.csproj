@@ -53,7 +53,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>PhilsLab.Program</StartupObject>
+    <StartupObject>PhilsVault.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Assets\Icons\skull.ico</ApplicationIcon>

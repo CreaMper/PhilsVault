@@ -51,10 +51,6 @@ namespace PhilsVault.Managers
                     Resets = 0,
                     Stage = 1
                 },
-                Alpha = new AlphaDto()
-                {
-                    AcceptedInvitation = false
-                },
                 Introduction = new IntroductionDto()
                 {
                     Completed = false

@@ -14,17 +14,17 @@ namespace SaveEditor
         private static readonly string _progressPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), $"{_directoryName}\\{_fileName}");
         private static readonly string _progressPathEdit = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), $"{_directoryName}\\edit.json");
         
-        private static Encrypt _encrypt = new Encrypt();
-        private static Decrypt _decrypt = new Decrypt();
+        private static readonly Encrypt _encrypt = new Encrypt();
+        private static readonly Decrypt _decrypt = new Decrypt();
 
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Phil's Lab save extractor/injector!");
-            Console.WriteLine("[E] - Extract (Extract ciphered txt to json)");
-            Console.WriteLine("[I] - Inject (Injecting json to ciphered txt)");
+            WL("Phil's Lab save extractor/injector!");
+            WL("[E] - Extract (Extract ciphered txt to json)");
+            WL("[I] - Inject (Injecting json to ciphered txt)");
             var key = Console.ReadKey(true);
 
-            Console.WriteLine("=================");
+            WL("=================");
             if (key.Key == ConsoleKey.E)
             {
                 if (File.Exists(_progressPath))
@@ -32,18 +32,18 @@ namespace SaveEditor
                     var readText = File.ReadAllText(_progressPath);
                     var progress = JsonConvert.DeserializeObject<ProgressDto>(_decrypt.DecryptData(readText));
                     File.WriteAllText(_progressPathEdit, JsonConvert.SerializeObject(progress, Formatting.Indented));
-                    Console.WriteLine("File has been extracted");
-                    Console.WriteLine();
+                    WL("File has been extracted");
+                    WL();
 
                     Console.Write("Do you want to open the file? [Y] : ");
                     key = Console.ReadKey(true);
                     if (key.Key == ConsoleKey.Y)
                         Process.Start("explorer.exe", _progressPathEdit);
 
-                    Console.WriteLine();
-                    Console.WriteLine("=================");
-                    Console.WriteLine();
-                    Console.WriteLine("Already edited? Do you want me to perform auto inject? [Y] :");
+                    WL();
+                    WL("=================");
+                    WL();
+                    WL("Already edited? Do you want me to perform auto inject? [Y] :");
                     key = Console.ReadKey(true);
                     if (key.Key == ConsoleKey.Y)
                         Inject();
@@ -52,17 +52,13 @@ namespace SaveEditor
                 }
                 else
                 {
-                    Console.WriteLine($"Cannot find save file at {_progressPath}");
+                    WL($"Cannot find save file at {_progressPath}");
                 }
             }
             else if (key.Key == ConsoleKey.I)
-            {
                 Inject();
-            }
             else
-            {
-                Console.WriteLine("Wrong option!");
-            }
+                WL("Wrong option!");
 
             Console.ReadKey(false);
         }
@@ -80,6 +76,11 @@ namespace SaveEditor
             {
                 Console.WriteLine($"Cannot find edited save file at {_progressPathEdit}");
             }
+        }
+
+        private static void WL(string str = "")
+        {
+            Console.WriteLine(str);
         }
     }
 }
