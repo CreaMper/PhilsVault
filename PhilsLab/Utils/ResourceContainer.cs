@@ -19,6 +19,9 @@ namespace PhilsLab.Utils
                 "error02.wav",
                 "type01.wav",
                 "intro.wav",
+                "access_deined.wav",
+                "access_granted.wav",
+                "lab_alarm.wav",
 
                 //StageOne
                 "phoenixFile_doc.jpg",

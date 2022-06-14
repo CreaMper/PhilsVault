@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PhilsLab.Dto.GameProgress;
+using PhilsLab.UnitOfWork;
+using System;
 using System.Threading;
 
 namespace PhilsLab
@@ -12,7 +14,9 @@ namespace PhilsLab
             {
                 if (!mutex.WaitOne(0, false))
                     Environment.Exit(0);
-                Console.WriteLine("Loading data...");
+
+                //Quick window initialize to avoid graphical bugs
+                var windowManager = new WindowManager(new ProgressDto());
 
                 try
                 {

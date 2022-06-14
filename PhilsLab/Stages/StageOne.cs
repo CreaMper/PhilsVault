@@ -27,35 +27,20 @@ namespace PhilsLab.Stages
         {
             if (!_progress.StageOne.LoginPhase)
             {
-                Position(30, 15);
-                ConsoleType("Chapter I: The Lever", 3000);
-                S(4000);
-                C();
-
-                Position(5, 150);
-                W("Forgot password? Try to start in ");
-
-                CursorChange(ConsoleColor.Yellow, ConsoleColor.Black);
-                W("-any-password ");
-
-                CursorChange(ConsoleColor.Green, ConsoleColor.Black);
-                W("mode!");
-                Position(0, 0);
-
-                Position(43, 5);
-                W("LOGIN: ");
-
-                Position(40, 7);
-                W("PASSWORD: ");
-
-                Position(51, 5);
-                S(2000);
-
-                ConsoleType("phil.forker", 1500, T.W);
-                S(400);
-                
                 if (_args.Contains("-any-password") || _args.Contains("any-password") || _args.Contains("--any-password"))
                 {
+                    Position(43, 5);
+                    W("LOGIN: ");
+
+                    Position(40, 7);
+                    W("PASSWORD: ");
+
+                    Position(51, 5);
+                    S(2000);
+
+                    ConsoleType("phil.forker", 1500, T.W);
+                    S(400);
+
                     Position(51, 7);
                     ConsoleType("**********", 1500, T.W);
 
@@ -91,6 +76,28 @@ namespace PhilsLab.Stages
                 } 
                 else
                 {
+                    Position(30, 15);
+                    ConsoleType("Chapter I: The Lever", 2000);
+                    S(4000);
+                    C();
+
+                    CursorChange(ConsoleColor.Yellow, ConsoleColor.Black, 5, 150);
+                    W("Try -any-password, stranger...");
+                    Position(0, 0);
+
+                    CursorChange(ConsoleColor.Green, ConsoleColor.Black);
+                    Position(43, 5);
+                    W("LOGIN: ");
+
+                    Position(40, 7);
+                    W("PASSWORD: ");
+
+                    Position(51, 5);
+                    S(2000);
+
+                    ConsoleType("phil.forker", 1500, T.W);
+                    S(400);
+
                     Position(51, 7);
                     ConsoleType("**********", 1500, T.W);
 
@@ -150,7 +157,7 @@ namespace PhilsLab.Stages
                 WL("");
                 WL("Last changed: 29.04.2022");
                 S(400);
-                WL("Current date: 25.05.2022");
+                WL("Current date: 22.05.2022");
                 S(400);
 
                 WL("");
@@ -196,8 +203,7 @@ namespace PhilsLab.Stages
 
                 WL("phil.forker@192.168.25.142# ");
 
-                //S(180000);
-                S(2000);
+                S(60000);
 
                 ConsoleType(@"con db 'physic-dep' 110 021", 2800, T.W);
                 S(1200);
@@ -235,6 +241,9 @@ namespace PhilsLab.Stages
                     for (int i = 0; i < 10; i++)
                     {
                         var key = Console.ReadKey(false);
+                        if (key.Key == ConsoleKey.Enter || key.Key == ConsoleKey.Backspace)
+                            break;
+
                         data.Add(key.KeyChar.ToString());
                         _factory.SoundManager.PlayType();
                     }
@@ -298,6 +307,9 @@ namespace PhilsLab.Stages
 
                 WL("ERR-04W: Unauthorized transaction.");
                 S(1200);
+
+                _soundManager.PlayLoop("lab_alarm.wav");
+
                 WL("ERR-21W: User credentials does not match!");
                 S(2000);
                 WL("ERR-412: User account is set as inactive!");
@@ -311,13 +323,13 @@ namespace PhilsLab.Stages
 
                 CursorChange(ConsoleColor.Yellow, ConsoleColor.Black, 50, Console.CursorTop+4);
 
-                ConsoleType("They know you are here.", 2000, T.W);
+                ConsoleType("They know you are here.", 2000, T.W, false);
                 S(2000);
 
-                ConsoleType(" You have 42 seconds left.", 2000, T.W);
+                ConsoleType(" You have 42 seconds left.", 2000, T.W, false);
                 S(2000);
 
-                ConsoleType(" Run, stranger...", 800, T.W);
+                ConsoleType(" Run, stranger...", 800, T.W, false);
 
                 S(10000);
 
@@ -339,6 +351,7 @@ namespace PhilsLab.Stages
             CursorChange(ConsoleColor.Black, ConsoleColor.Red, 51, 3);
             ConsoleType("ACCESS DEINED", 0, T.W);
             Position(51, 7);
+            _soundManager.Play("access_deined.wav");
             S(3000);
 
             CursorChange(ConsoleColor.Green, ConsoleColor.Black, 51, 3);
@@ -354,6 +367,7 @@ namespace PhilsLab.Stages
         {
             CursorChange(ConsoleColor.Black, ConsoleColor.Green, 51, 3);
             ConsoleType("ACCESS GRANTED", 0, T.W);
+            _soundManager.Play("access_granted.wav");
             Position(61, 7);
             S(3000);
 
