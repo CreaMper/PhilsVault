@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using PhilsVault.Dto.GameProgress;
 
-namespace PhilsVault.UnitOfWork
+namespace PhilsVault.Managers
 {
     public class WindowManager
     {

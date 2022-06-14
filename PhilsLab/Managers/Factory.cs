@@ -1,8 +1,7 @@
 ﻿using Cryptography;
 using PhilsVault.Dto.GameProgress;
-using PhilsVault.UnitOfWork;
 
-namespace PhilsVault
+namespace PhilsVault.Managers
 {
     public class Factory
     {

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace PhilsVault.UnitOfWork
+namespace PhilsVault.Managers
 {
     public class AssetManager : ResourceContainer
     {

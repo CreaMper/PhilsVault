@@ -4,7 +4,7 @@ using System.IO;
 using PhilsVault.Dto.GameProgress;
 using Cryptography;
 
-namespace PhilsVault.UnitOfWork
+namespace PhilsVault.Managers
 {
     public class ProgressManager
     {

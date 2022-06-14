@@ -1,7 +1,7 @@
 ﻿using System;
 using PhilsVault.Utils;
 
-namespace PhilsVault.UnitOfWork
+namespace PhilsVault.Managers
 {
     public class AnimationManager : WriteManager
     {

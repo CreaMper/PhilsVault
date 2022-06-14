@@ -230,26 +230,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dto\GameProgress\AlphaDto.cs" />
     <Compile Include="Dto\GameProgress\IntroductionDto.cs" />
     <Compile Include="Dto\GameProgress\PlayerDataDto.cs" />
     <Compile Include="Dto\GameProgress\ProgressDto.cs" />
     <Compile Include="Dto\GameProgress\StageOneDto.cs" />
     <Compile Include="Dto\ResourceDto.cs" />
     <Compile Include="Dto\GameProgress\SettingsDto.cs" />
-    <Compile Include="Factory.cs" />
+    <Compile Include="Managers\Factory.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Stages\Legacy\AlphaStage.cs" />
     <Compile Include="Stages\Introduction.cs" />
     <Compile Include="Stages\StageOne.cs" />
-    <Compile Include="UnitOfWork\AnimationManager.cs" />
-    <Compile Include="UnitOfWork\AssetManager.cs" />
-    <Compile Include="UnitOfWork\ProgressManager.cs" />
-    <Compile Include="UnitOfWork\SoundManager.cs" />
-    <Compile Include="UnitOfWork\StageManager.cs" />
-    <Compile Include="UnitOfWork\WindowManager.cs" />
-    <Compile Include="UnitOfWork\WriteManager.cs" />
+    <Compile Include="Managers\AnimationManager.cs" />
+    <Compile Include="Managers\AssetManager.cs" />
+    <Compile Include="Managers\ProgressManager.cs" />
+    <Compile Include="Managers\SoundManager.cs" />
+    <Compile Include="Managers\StageManager.cs" />
+    <Compile Include="Managers\WindowManager.cs" />
+    <Compile Include="Managers\WriteManager.cs" />
     <Compile Include="Utils\AnimationType.cs" />
     <Compile Include="Utils\DifficultyEnum.cs" />
     <Compile Include="Utils\FileTypeEnum.cs" />
