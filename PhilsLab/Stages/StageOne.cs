@@ -285,9 +285,9 @@ namespace PhilsVault.Stages
                     File.WriteAllBytes("25042022.rar", fileData);
                 }
 
-                if (!File.Exists("phill_is_dead.wav"))
+                if (!File.Exists("phil_is_dead.wav"))
                 {
-                    var fileData = _assetManager.GetResource("phill_is_dead.wav");
+                    var fileData = _assetManager.GetResource("phil_is_dead.wav");
                     File.WriteAllBytes("emergency-call-25042022.wav", fileData);
                 }
 
