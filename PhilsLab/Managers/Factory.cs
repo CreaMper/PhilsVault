@@ -18,10 +18,9 @@ namespace PhilsVault.Managers
 
         public Factory()
         {
-            var progress = ProgressManager.Load();
-
             AssetManager = new AssetManager(Decrypt);
             ProgressManager = new ProgressManager(Encrypt, Decrypt);
+            var progress = ProgressManager.Load();
             WindowManager = new WindowManager(progress);
             StageManager = new StageManager(progress, AssetManager, WindowManager);
             SoundManager = new SoundManager(AssetManager);
