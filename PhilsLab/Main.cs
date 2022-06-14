@@ -25,7 +25,8 @@ namespace PhilsVault
                 }
                 catch (Exception ex)
                 {
-                    Console.Write($"There is a problem, I can not run myself! I got an exception! {ex.Message}");
+                    Console.WriteLine("");
+                    Console.WriteLine($"[Real exception] Something went wrong.... :  {ex.Message}");
                     Console.ReadKey(true);
                 }
             }

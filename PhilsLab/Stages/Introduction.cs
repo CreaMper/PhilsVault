@@ -8,8 +8,9 @@ namespace PhilsVault.Stages
     {
         private static ProgressDto _progress;
 
-        public Introduction(AssetManager assetManager)
+        public Introduction(AssetManager assetManager, ProgressDto progress)
         {
+            _progress = progress;
             _soundManager = new SoundManager(assetManager);
             C();
         }

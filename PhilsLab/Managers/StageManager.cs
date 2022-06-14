@@ -22,7 +22,7 @@ namespace PhilsVault.Managers
             if (!_progress.Introduction.Completed)
             {
                 _windowManager.Introduction();
-                var stage = new Introduction(_assetManager);
+                var stage = new Introduction(_assetManager, _progress);
                 stage.Start();
             }
 
