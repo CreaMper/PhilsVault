@@ -12,13 +12,11 @@ namespace AssetBuilder
             if (args.Contains("instant"))
             {
                 packEngine.PackAssests(true);
-
-
             }
             else 
             {
-                Console.WriteLine("Phil's Lab assets builder!");
-                Console.WriteLine("[P] - Pack files at *\\Assets directory to binary");
+                WL("Phil's Lab assets builder!");
+                WL(@"[P] - Pack files at *\Assets directory to binary");
                 var key = Console.ReadKey(true);
 
                 Console.WriteLine("=================");
@@ -28,10 +26,15 @@ namespace AssetBuilder
                 }
                 else
                 {
-                    Console.WriteLine("Wrong option!");
+                    WL("Wrong option!");
                     Console.ReadKey(false);
                 }
             }
+        }
+
+        private static void WL(string str)
+        {
+            Console.WriteLine(str);
         }
     }
 }
