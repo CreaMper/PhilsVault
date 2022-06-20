@@ -10,7 +10,7 @@ namespace SaveEditor
     class Program
     {
         private static readonly string _directoryName = "CDSGames";
-        private static readonly string _fileName = "miracle.txt";
+        private static readonly string _fileName = "progress.txt";
         private static readonly string _progressPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), $"{_directoryName}\\{_fileName}");
         private static readonly string _progressPathEdit = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), $"{_directoryName}\\edit.json");
         

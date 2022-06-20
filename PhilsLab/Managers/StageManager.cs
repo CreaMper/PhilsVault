@@ -34,7 +34,7 @@ namespace PhilsVault.Managers
             }
 
             Console.Clear();
-            Console.WriteLine("There is not more content! Thanks for playing, for now... :)");
+            Console.WriteLine("You need to check .RAR file before we continue...");
             Console.ReadKey();
         }
     }
