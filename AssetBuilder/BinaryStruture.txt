@@ -9,7 +9,3 @@
 #
 # 32 bytes = File size 
 #
-
-#
-# X bytes = File data
-#

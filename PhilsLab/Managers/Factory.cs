@@ -5,16 +5,16 @@ namespace PhilsVault.Managers
 {
     public class Factory
     {
+        public ProgressDto _progress;
+        public Encrypt Encrypt = new Encrypt();
+        public Decrypt Decrypt = new Decrypt();
+
         public ProgressManager ProgressManager;
         public WindowManager WindowManager;
         public StageManager StageManager;
-        public ProgressDto _progress;
-        public AnimationManager AnimationManager;
         public SoundManager SoundManager;
         public WriteManager WriteManager;
         public AssetManager AssetManager;
-        public Encrypt Encrypt = new Encrypt();
-        public Decrypt Decrypt = new Decrypt();
 
         public Factory()
         {
@@ -24,7 +24,6 @@ namespace PhilsVault.Managers
             WindowManager = new WindowManager(progress);
             StageManager = new StageManager(progress, AssetManager, WindowManager);
             SoundManager = new SoundManager(AssetManager);
-            AnimationManager = new AnimationManager(WindowManager, SoundManager);
             WriteManager = new WriteManager();
         }
     }

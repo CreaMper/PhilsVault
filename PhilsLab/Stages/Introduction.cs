@@ -7,15 +7,10 @@ namespace PhilsVault.Stages
     public class Introduction : WriteManager
     {
         private static ProgressDto _progress;
-        private static Factory _factory;
-        private readonly string[] _args;
-        private static AnimationManager _animationManager;
 
-        public Introduction(ProgressDto progress, string[] args, AssetManager assetManager)
+        public Introduction(AssetManager assetManager, ProgressDto progress)
         {
             _progress = progress;
-            _factory = new Factory();
-            _args = args;
             _soundManager = new SoundManager(assetManager);
             C();
         }
@@ -94,7 +89,7 @@ namespace PhilsVault.Stages
 
             SetNextLineInSquare();
             Console.SetCursorPosition(20, 20);
-            ConsoleType("Be not affraid, ", 2000, T.W, false);
+            ConsoleType("Be not afraid, ", 2000, T.W, false);
             S(500);
             ConsoleType("stranger...", 2000, T.W, false);
             _soundManager.PlayLoop("error02.wav");

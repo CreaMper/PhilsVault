@@ -7,8 +7,15 @@ using System.Text;
 
 namespace AssetBuilder
 {
-    public class Pack : Helper
+    public class Pack
     {
+        private readonly string _currentDir;
+        private readonly string _assetsDir;
+        private readonly List<string> _filePathsList;
+        private readonly Encrypt _encrypt = new Encrypt();
+
+        public const string _binaryHeader = "Never Gonna Give You Up";
+
         public Pack()
         {
             _currentDir = Directory.GetCurrentDirectory();
@@ -26,7 +33,6 @@ namespace AssetBuilder
                 return;
             }
 
-            //Recursion to be added later... For now one nest is sufficient
             var mainDirFiles = Directory.EnumerateFiles(_assetsDir);
             foreach (var file in mainDirFiles)
                 _filePathsList.Add(file);
@@ -72,7 +78,6 @@ namespace AssetBuilder
 
         private void Build()
         {
-            //cipher to add in feature...
             var writer = new BinaryWriter(File.Open($@"{_currentDir}\Vault.bin", FileMode.Create));
             using (writer)
             {

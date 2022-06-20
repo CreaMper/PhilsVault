@@ -60,10 +60,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Cryptography\Cryptography.csproj">
       <Project>{0cb62d64-43fe-4850-a9f8-d3d61a9bbfde}</Project>
       <Name>Cryptography</Name>

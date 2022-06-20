@@ -53,7 +53,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>PhilsLab.Program</StartupObject>
+    <StartupObject>PhilsVault.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Assets\Icons\skull.ico</ApplicationIcon>
@@ -241,7 +241,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stages\Introduction.cs" />
     <Compile Include="Stages\StageOne.cs" />
-    <Compile Include="Managers\AnimationManager.cs" />
     <Compile Include="Managers\AssetManager.cs" />
     <Compile Include="Managers\ProgressManager.cs" />
     <Compile Include="Managers\SoundManager.cs" />
@@ -255,7 +254,6 @@
     <Compile Include="Utils\SpeedEnum.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="Assets\StageOne\25042022.rar">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -292,7 +290,7 @@
     <Content Include="Assets\Sounds\type01.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\StageOne\phill_is_dead.wav">
+    <Content Include="Assets\StageOne\phil_is_dead.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\StageOne\phoenixFile_doc.jpg">

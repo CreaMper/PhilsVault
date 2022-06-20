@@ -6,10 +6,10 @@ namespace PhilsVault.Managers
 {
     public class SoundManager
     {
-        private int MaxSoundLevel = 3;
-        private CoreAudioDevice Device = new CoreAudioController().DefaultPlaybackDevice;
-        private AssetManager _assetManager;
-        private SoundPlayer soundPlayer;
+        private readonly int MaxSoundLevel = 3;
+        private readonly CoreAudioDevice Device = new CoreAudioController().DefaultPlaybackDevice;
+        private readonly AssetManager _assetManager;
+        private readonly SoundPlayer soundPlayer;
 
         public SoundManager(AssetManager assetManager)
         {

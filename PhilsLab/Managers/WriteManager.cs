@@ -60,14 +60,6 @@ namespace PhilsVault.Managers
             Console.Clear();
         }
 
-        public static void B(int freq = 0, int durat = 0)
-        {
-            if (freq == 0 || durat == 0)
-                Console.Beep();
-            else
-                Console.Beep(freq, durat);
-        }
-
         public void ConsoleType(string str, int speed, T type = T.W, bool enableSound = true)
         {
             var stepTime = Convert.ToInt32(Math.Round((double)speed / (double)str.Length, 0));
